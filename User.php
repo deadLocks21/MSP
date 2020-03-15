@@ -1,4 +1,5 @@
 <?php
+//Représente un utilisateur du système.
 class User{
     private $ID;
     private $Name;
