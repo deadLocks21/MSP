@@ -35,15 +35,15 @@ class User{
         $this->ID = $aID;
     }
 
-    private function setName(int $aName){
+    public function setName(int $aName){
         $this->Name = $aName;
     }
 
-    private function setLogin(int $aLogin){
+    public function setLogin(int $aLogin){
         $this->Login = $aLogin;
     }
 
-    private function setPasswordHash(int $aPasswordHash){
+    public function setPasswordHash(int $aPasswordHash){
         $this->PasswordHash = $aPasswordHash;
     }
 }
