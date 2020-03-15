@@ -3,6 +3,13 @@ class Project{
     private $ID;
     private $Name;
 
+    
+    // Constructeur de la class Project
+    public function __construct(int $aID){
+        $this->setID($aID);
+    }
+
+
     // Getter de la class Project
     public function getID(){
         return $this->ID;
