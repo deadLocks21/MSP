@@ -3,7 +3,14 @@
 class Utils{
      //Retourne un hachage de pass.
     public function HashPassword(string $pass){
-        return string;
+        $hash = '';
+        $lenPass = strlen($pass);
+
+        for ($i=0; $i<$lenPass; $i++){
+            $hash .= dechex(ord($pass[$i]));  // On récupère l'ord du caractère et on le converti en hexa.
+        }
+
+        return $hash;
     }
 
     // Indique si le mot de passe respecte les consignes de sécurité.

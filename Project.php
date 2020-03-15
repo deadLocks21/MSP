@@ -3,7 +3,7 @@ class Project{
     private $ID;
     private $Name;
 
-    
+
     // Constructeur de la class Project
     public function __construct(int $aID){
         $this->setID($aID);
