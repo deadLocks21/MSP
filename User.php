@@ -5,7 +5,12 @@ class User{
     private $Login;
     private $PasswordHash;
 
-    
+    // Constructeur de la class User
+    public function __construct(int $aID){
+        $this->setID($aID);
+    }
+
+
     // Getter de la class User
     public function getID(){
         return $this->ID;
