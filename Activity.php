@@ -12,6 +12,14 @@ class Activity extends ActivityState {
     private $Details;
 
 
+    // Constructeur de la class
+    public function __construct(int $aID, string $aName, string $aSummary, ActivityState $aState){
+        $this->setID($aID);
+        $this->setName($aName);
+        $this->setSummary($aSummary);
+        $this->setState($aState);
+    }
+
 
     // Getter de la class
     public function getID()
@@ -73,7 +81,12 @@ class Activity extends ActivityState {
 
     private function setState(ActivityState $aState)
     {
-        $this->state = $aState;
+        if(in_array($aState, [ActivityState::CANCELED, ActivityState::FINISHED, ActivityState::ONGOING])){
+            $this->state = $aState;
+        }
+        else {
+            $this->state = ActivityState::PLANNED;
+        }
     }
 
     public function setSummary(string $aSummary)
