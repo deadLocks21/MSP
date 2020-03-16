@@ -138,29 +138,3 @@ class Activity{
         $this->Details = $aDetails;
     }
 }
-
-
-$a = new Activity(1, 'Name', 'Summary', ActivityState::ONGOING);
-$dT1 = new DateTime('2009-10-13');
-$dT2 = new DateTime('2009-10-12');
-
-
-$a->setStart($dT1);
-$a->setEnd($dT2);
-
-
-
-
-if($a->getStart() != ''){
-    echo '<br />Start : '.$a->getStart()->format('Y-m-d H:i:s');
-}
-else{
-    echo '<br />'.'Pas de date';
-}
-
-if($a->getEnd() != ''){
-    echo '<br />End : '.$a->getEnd()->format('Y-m-d H:i:s');
-}
-else{
-    echo '<br />'.'Pas de date';
-}
