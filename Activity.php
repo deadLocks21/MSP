@@ -1,4 +1,5 @@
 <?php
+require 'BadActivityStateError.php';
 require 'ActivityState.php';
 
 // Représente une activité
@@ -136,5 +137,23 @@ class Activity{
     public function setDetails(string $aDetails)
     {
         $this->Details = $aDetails;
+    }
+
+
+    // Méthodes de la class
+    public function StartActivity(){
+
+    }
+
+    public function Finish(){
+
+    }
+
+    public function Cancel(){
+
+    }
+
+    public function UnCancel(){
+
     }
 }
