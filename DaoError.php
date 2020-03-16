@@ -22,3 +22,11 @@ class BadPasswordError extends DaoError {
         parent::__construct('Erreur lors de la saisie du mot de passe.', 0);
     }
 }
+
+// Type d'exception indiquant qu'un utilisateur n'existe pas
+class BadUserError extends DaoError {
+    // Constructeur de la class
+    public function __construct(){
+        parent::__construct('L\'utilisateur demandé n\'existe pas.', 0);
+    }
+}
