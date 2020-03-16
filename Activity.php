@@ -1,6 +1,6 @@
 <?php
 // Représente une activité
-class Activity extends ActivityState {
+class Activity{
     private $ID;
     private $state;
     private $summary;
