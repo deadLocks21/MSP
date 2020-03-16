@@ -14,3 +14,11 @@ class DataBaseError extends DaoError {
         parent::__construct('Erreur lors de la connexion à la DB', 0);
     }
 }
+
+// Type d'exception indiquant que le mot de passe n'est pas correct
+class BadPasswordError extends DaoError {
+    // Constructeur de la class
+    public function __construct(){
+        parent::__construct('Erreur lors de la saisie du mot de passe.', 0);
+    }
+}
