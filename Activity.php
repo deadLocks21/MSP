@@ -1,4 +1,6 @@
 <?php
+require 'ActivityState.php';
+
 // Représente une activité
 class Activity{
     private $ID;
@@ -13,7 +15,7 @@ class Activity{
 
 
     // Constructeur de la class
-    public function __construct(int $aID, string $aName, string $aSummary, ActivityState $aState){
+    public function __construct(int $aID, string $aName, string $aSummary,$aState){
         $this->setID($aID);
         $this->setName($aName);
         $this->setSummary($aSummary);
@@ -79,7 +81,7 @@ class Activity{
         $this->ID = $aID;
     }
 
-    private function setState(ActivityState $aState)
+    private function setState($aState)
     {
         if(in_array($aState, [ActivityState::CANCELED, ActivityState::FINISHED, ActivityState::ONGOING])){
             $this->state = $aState;
@@ -98,12 +100,22 @@ class Activity{
 
     public function setStart(DateTime $aStart)
     {
-        $this->start = $aStart;
+        if($this->getEnd() == ''){
+            $this->start = $aStart;
+        }
+        elseif (($aStart->diff($this->getEnd())->invert) == 0){
+            $this->start = $aStart;
+        }
     }
 
     public function setEnd(DateTime $aEnd)
     {
-        $this->end = $aEnd;
+        if($this->getStart() == ''){
+            $this->end = $aEnd;
+        }
+        elseif (($aEnd->diff($this->getStart())->invert) == 1 OR $aEnd == $this->getStart()){
+            $this->end = $aEnd;
+        }
     }
 
     public function setDuration(int $aDuration)
