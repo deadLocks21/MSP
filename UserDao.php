@@ -69,10 +69,10 @@ class UserDao {
     }
 }
 
-$u = new UserDao();
-$user = $u->Read('cmeunier','746F746F');
-
-echo 'id = '.$user->getID().'<br />';
-echo 'name = '.$user->getName().'<br />';
-echo 'login = '.$user->getLogin().'<br />';
-echo 'hash = '.$user->getPasswordHash().'<br />';
+//$u = new UserDao();
+//$user = $u->Read('cmeunier','746F746F');
+//
+//echo 'id = '.$user->getID().'<br />';
+//echo 'name = '.$user->getName().'<br />';
+//echo 'login = '.$user->getLogin().'<br />';
+//echo 'hash = '.$user->getPasswordHash().'<br />';
