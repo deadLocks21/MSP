@@ -54,12 +54,12 @@ class ProjectDAO{
     }
 }
 
-$u = new User(1);
-$u->setName('Martin');
-$u->setLogin('ybenaissa');
-$u->setPasswordHash('746F746F');
-
-
-$pdao = new ProjectDAO();
-$p = $pdao->ReadProjects($u);
-echo print_r($p);
+//$u = new User(1);
+//$u->setName('Martin');
+//$u->setLogin('ybenaissa');
+//$u->setPasswordHash('746F746F');
+//
+//
+//$pdao = new ProjectDAO();
+//$p = $pdao->ReadProjects($u);
+//echo print_r($p);
