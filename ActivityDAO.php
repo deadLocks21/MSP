@@ -123,8 +123,8 @@ class ActivityDAO{
     }
 }
 
-$p = new Project(3);
-$u = new User(3);
-
-$aDao = new ActivityDAO();
-echo print_r($aDao->ReadActivities($p, $u));
+//$p = new Project(3);
+//$u = new User(3);
+//
+//$aDao = new ActivityDAO();
+//echo print_r($aDao->ReadActivities($p, $u));
