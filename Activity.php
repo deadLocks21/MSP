@@ -1,5 +1,5 @@
 <?php
-require 'BadActivityStateError.php';
+require 'LogicError.php';
 require 'ActivityState.php';
 
 // Représente une activité
@@ -99,7 +99,7 @@ class Activity{
         }
     }
 
-    public function setStart(DateTime $aStart)
+    public function setStart($aStart)
     {
         if($this->getEnd() == ''){
             $this->start = $aStart;
@@ -109,7 +109,7 @@ class Activity{
         }
     }
 
-    public function setEnd(DateTime $aEnd)
+    public function setEnd($aEnd)
     {
         if($this->getStart() == ''){
             $this->end = $aEnd;
