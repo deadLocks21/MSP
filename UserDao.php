@@ -1,67 +1,35 @@
 <?php
 require 'DaoError.php';
 require 'User.php';
+require 'ToolsDAO.php';
 
 // Classe gérant le stockage dans le SGBD des objets User
 class UserDao {
-    private function connection(){
-        $conn = null;
-
-        try {
-            $conn = new PDO('mysql:host=localhost;dbname=dbMSP', 'DaoMSP', '!MdpDeMSP21.');
-        } catch (PDOException $e) {
-            throw new DataBaseError();
-        }
-
-        return $conn;
-    }
-
-    private function construireUser($info){
-        $user = null;
-        $c = $this->connection();
-
-        $queryForName = 'SELECT * FROM Utilisateur NATURAL JOIN Technicien WHERE LOGIN=\''.$info['LOGIN'].'\';';
-
-        // On récupère les infos de l'utilisateur dont son nom
-        echo $queryForName;
-        $rowInfoUser = $c->query($queryForName);
-        $infoUser = $rowInfoUser->fetchAll();
-        $rowInfoUser->closeCursor();
-
-
-        // Création de l'objet User
-        $user = new User($info['ID']);
-
-        $user->setName($infoUser[0]['nom']);
-        $user->setLogin($info['LOGIN']);
-        $user->setPasswordHash($info['PASSWORD']);
-
-        return $user;
-    }
-
     public function Read(string $login, string $password){
-        $res = null;
-        $conn = $this->connection();
+        $tDAO = new ToolsDAO();
+        $user = null;
 
-        $ligneUser = $conn->query("SELECT * FROM Utilisateur WHERE LOGIN='$login';");
-        $infoUser = $ligneUser->fetchAll();
-        $ligneUser->closeCursor();
+        $UaP = $tDAO->query("CALL UserAndPass('$login', '$password');");
 
-        $nbrDeUser = count($infoUser);
+        $loginTrue = $UaP[0][0];
+        $passTrue = $UaP[1][0];
 
-        if($nbrDeUser == 1){
-            if($infoUser[0]['LOGIN'] == $login){
-                if ($infoUser[0]['PASSWORD'] == $password){
-                    $res = $this->construireUser($infoUser[0], $conn);
-                }
+        if($loginTrue == 1){
+            if($passTrue == 1){
+                $info = $tDAO->query("CALL GetUser('$login', '$password');");
+                $user = new User($info[0]['ID']);
+
+                $user->setName($info[0]['nom']);
+                $user->setLogin($login);
+                $user->setPasswordHash($password);
+            } else {
+                throw new BadPasswordError();
             }
         } else {
             throw new BadUserError();
         }
 
-
-
-        return $res;
+        return $user;
     }
 
     public function Update(User $user){
