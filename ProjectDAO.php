@@ -1,56 +1,23 @@
 <?php
 require 'User.php';
 require 'Project.php';
+require 'ToolsDAO.php';
 
 // Gère la base pour les objets Project
 class ProjectDAO{
-    private function connection(){
-        $conn = null;
-
-        try {
-            $conn = new PDO('mysql:host=localhost;dbname=dbMSP', 'DaoMSP', '!MdpDeMSP21.');
-        } catch (PDOException $e) {
-            throw new DataBaseError();
-        }
-
-        return $conn;
-    }
-
-    private function createProjects($numP){
-        $conn = $this->connection();
-
-        $res = array();
-        foreach ($numP as $num){
-            $req = $conn->query("SELECT nom FROM Projet WHERE ID=$num");
-            $name = ($req->fetchAll())[0]['nom'];
-            $req->closeCursor();
-
-            $p = new Project($num);
-            $p->setName($name);
-
-            $res[] = $p;
-        }
-
-        return $res;
-    }
-
     public function ReadProjects(User $user){
-        $login = $user->getLogin();
-        $requeteListProj = "SELECT projetID FROM Compose JOIN Projet ON projetID = Projet.ID JOIN Affecté ON Affecté.activitéID = Compose.activitéID JOIN Technicien ON Technicien.ID = technicienID JOIN Utilisateur ON Utilisateur.ID = Utilisateur_ID WHERE login='$login';";
-        $conn = $this->connection();
+        $tDAO = new ToolsDAO();
 
-        $req = $conn->query($requeteListProj);
-        $listProj = ($req->fetchAll());
-        $req->closeCursor();
+         $projects = $tDAO->query("CALL ReadProjects('".$user->getLogin()."');");
 
-        $numProjects = array();
-        foreach ($listProj as $projet){
-            if(!in_array($projet['projetID'], $numProjects)){
-                $numProjects[] = $projet['projetID'];
-            }
+        $projDuU = array();
+        foreach($projects as $proj){
+            $p = new Project($proj['projetID']);
+            $p->setName($proj['nom']);
+            $projDuU[] = $p;
         }
 
-        return $this->createProjects($numProjects);
+        return $projDuU;
     }
 }
 
@@ -62,4 +29,5 @@ class ProjectDAO{
 //
 //$pdao = new ProjectDAO();
 //$p = $pdao->ReadProjects($u);
-//echo print_r($p);
+//echo print_r($p)."\n";
+
