@@ -4,22 +4,22 @@ class ToolsDAO{
     private $conn = null;
 
     private function openCon(){
-        $this->conn = new PDO('mysql:host=localhost;dbname=dbMSP', 'DaoMSP', '!MdpDeMSP21.');
-
+        return new PDO('mysql:host=localhost;dbname=dbMSP', 'DaoMSP', '!MdpDeMSP21.');
     }
 
     private function closeCon(){
-        $this->conn = null;
+        return null;
     }
 
     public function query($q){
-        $this->openCon();
+        $c = $this->openCon();
 
-        $resQuery = $this->conn->query($q);
-        $res = $resQuery->fetchAll();
-        $resQuery->closeCursor();
+        $req = $c->query($q);
+        $res = $req->fetchAll();
+        $req->closeCursor();
 
-        $this->closeCon();
+        $c = $this->closeCon();
+
         return $res;
     }
 }
