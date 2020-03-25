@@ -22,4 +22,12 @@ class ToolsDAO{
 
         return $res;
     }
+
+    public function call($q){
+        $c = $this->openCon();
+
+        $c->query($q);
+
+        $c = $this->closeCon();
+    }
 }
