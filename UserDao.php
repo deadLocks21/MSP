@@ -33,7 +33,14 @@ class UserDao {
     }
 
     public function Update(User $user){
+        $tDAO = new ToolsDAO();
 
+        $id = $user->getID();
+        $name = $user->getName();
+        $login = $user->getLogin();
+        $password = $user->getPasswordHash();
+
+        $tDAO->call("CALL AlterUser($id, '$name', '$login', '$password');");
     }
 }
 
@@ -41,6 +48,17 @@ class UserDao {
 //$user = $u->Read('cmeunier','746F746F');
 //
 //echo 'id = '.$user->getID().'<br />';
+//echo 'name = '.$user->getName().'<br />';
+//echo 'login = '.$user->getLogin().'<br />';
+//echo 'hash = '.$user->getPasswordHash().'<br />';
+//
+//$user->setName('Meunier');
+//
+//$user = $u->Update($user);
+//
+//$user = $u->Read('cmeunier','746F746F');
+//
+//echo '<br />'.'id = '.$user->getID().'<br />';
 //echo 'name = '.$user->getName().'<br />';
 //echo 'login = '.$user->getLogin().'<br />';
 //echo 'hash = '.$user->getPasswordHash().'<br />';
