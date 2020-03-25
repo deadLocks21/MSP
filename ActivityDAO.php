@@ -43,7 +43,27 @@ class ActivityDAO{
     }
 
     public function Update(Activity $a){
+        $tDAO = new ToolsDAO();
+        $statut = "";
 
+        $id = $a->getID();
+
+        switch ($a->getState()) {
+            case ActivityState::PLANNED:
+                $statut = "prévue";
+                break;
+            case ActivityState::CANCELED:
+                $statut = "annulée";
+                break;
+            case ActivityState::FINISHED:
+                $statut = "terminée";
+                break;
+            case ActivityState::ONGOING:
+                $statut = "en cours";
+                break;
+        }
+        
+        $tDAO->call("CALL AlterActivity($id, '$statut');");
     }
 }
 
@@ -51,4 +71,14 @@ class ActivityDAO{
 //$u = new User(3);
 //
 //$aDao = new ActivityDAO();
+//
 //echo print_r($aDao->ReadActivities($p, $u));
+//
+//$a = ($aDao->ReadActivities($p, $u))[0];
+//$a->setState(ActivityState::FINISHED);
+//
+//$aDao->Update($a);
+//
+//echo print_r($aDao->ReadActivities($p, $u));
+
+
