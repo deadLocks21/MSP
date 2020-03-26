@@ -1,5 +1,6 @@
 <?php
 session_start();
+require '/var/www/public/logic/User.php';
 
 if(!isset($_SESSION['UserConnected'])){
     $_SESSION['UserConnected'] = null;
@@ -9,6 +10,8 @@ if(!isset($_SESSION['UserConnected'])){
 class MainWindow{
     public function __construct(){
         $button = "";
+        $corps = "";
+        $userName = "";
 
         if($_SESSION['UserConnected'] == null){
             $button = '<p><a href=\'login.php\'>Connexion</a></p>
@@ -16,8 +19,22 @@ class MainWindow{
         } else {
             $button = '<p><a>Déconnexion</a></p>
         <p><a>Profil</a></p>';
+
+            $corps = '<ul>
+            <li><a>Projet 01</a></li>
+            <li><a>Projet 02</a></li>
+        </ul>';
+
+           // $userName = $_SESSION['UserConnected']->getUser();
         }
 
+
+        if(!isset($_SESSION['UserConnected'])){
+            echo 'Null ...';
+        } else {
+            echo 'OK';
+            echo print_r($_SESSION['UserConnected']);
+        }
 
 
         echo "<!doctype html>
@@ -32,12 +49,10 @@ class MainWindow{
         
         <br />
 
-        <p>Technicien connecté : </p>
+        <p>Technicien connecté : $userName</p>
 
-        <ul>
-            <li><a>Projet 01</a></li>
-            <li><a>Projet 02</a></li>
-        </ul>
+        $corps
+        
     </body>
 </html>";
     }

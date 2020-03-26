@@ -12,11 +12,11 @@ class LoginWindow{
         <link rel=\"stylesheet\" href=\"style_sombre.css\">
     </head>
     <body>
-        <form action=\"\">
+        <form action=\"action/LoginWindow.Connect.php\" method=\"POST\">
             <p>Login :</p>
-            <p><input id=\"login\" type=\"text\"></p>
+            <p><input name=\"login\" type=\"text\"></p>
             <p>Password :</p>
-            <p><input id=\"password\" type=\"text\"></p>
+            <p><input name=\"password\" type=\"text\"></p>
             <br />
             <p><input type=\"submit\" value=\"Connect\"><a href=\"http://192.168.1.27\"><input type=\"button\" value=\"Cancel\"></a></p>
         </form>
