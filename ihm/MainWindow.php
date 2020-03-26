@@ -1,7 +1,25 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['UserConnected'])){
+    $_SESSION['UserConnected'] = null;
+}
+
 // Classe MainWindow
 class MainWindow{
     public function __construct(){
+        $button = "";
+
+        if($_SESSION['UserConnected'] == null){
+            $button = '<p><a href=\'login.php\'>Connexion</a></p>
+        <p><a>Profil</a></p>';
+        } else {
+            $button = '<p><a>Déconnexion</a></p>
+        <p><a>Profil</a></p>';
+        }
+
+
+
         echo "<!doctype html>
 <html lang=\"fr\">
     <head>
@@ -10,9 +28,9 @@ class MainWindow{
         <link rel=\"stylesheet\" href=\"style_sombre.css\">
     </head>
     <body>
-        <p><a>Connexion</a></p>
-        <p><a>Déconnexion</a></p>
-        <p><a>Profil</a></p>
+        $button
+        
+        <br />
 
         <p>Technicien connecté : </p>
 
@@ -24,5 +42,3 @@ class MainWindow{
 </html>";
     }
 }
-
-header('Location: http://192.168.1.27');
