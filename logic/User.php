@@ -12,6 +12,7 @@ class User{
     }
 
 
+
     // Save
     public function save(){
         $myUser = array(
@@ -31,6 +32,8 @@ class User{
         $this->setLogin($myU['Login']);
         $this->setPasswordHash($myU['PasswordHash']);
     }
+
+
 
     // Getter de la class User
     public function getID(){

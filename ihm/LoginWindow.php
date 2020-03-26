@@ -1,8 +1,6 @@
 <?php
 // Classe LoginWindow
 class LoginWindow{
-    private $UserConnected;
-
     public function __construct(){
         echo "<!doctype html>
 <html lang=\"fr\">
@@ -22,17 +20,6 @@ class LoginWindow{
         </form>
     </body>
 </html>";
-    }
-
-    // Getter et Setter
-    public function getUserConnected()
-    {
-        return $this->UserConnected;
-    }
-
-    public function setUserConnected($UserConnected)
-    {
-        $this->UserConnected = $UserConnected;
     }
 
 

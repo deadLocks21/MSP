@@ -25,15 +25,9 @@ class MainWindow{
             <li><a>Projet 02</a></li>
         </ul>';
 
-           // $userName = $_SESSION['UserConnected']->getUser();
-        }
-
-
-        if(!isset($_SESSION['UserConnected'])){
-            echo 'Null ...';
-        } else {
-            echo 'OK';
-            echo print_r($_SESSION['UserConnected']);
+            $user = new User(1);
+            $user->complete($_SESSION['UserConnected']);
+            $userName = strtoupper($user->getName());
         }
 
 
@@ -49,7 +43,7 @@ class MainWindow{
         
         <br />
 
-        <p>Technicien connecté : $userName</p>
+        <p>Bienvenu technicien $userName</p>
 
         $corps
         
