@@ -1,6 +1,6 @@
 <?php
 require 'DaoError.php';
-require 'User.php';
+require 'logic/User.php';
 require 'ToolsDAO.php';
 
 // Classe gérant le stockage dans le SGBD des objets User

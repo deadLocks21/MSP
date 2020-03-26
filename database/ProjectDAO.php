@@ -1,6 +1,6 @@
 <?php
-require 'User.php';
-require 'Project.php';
+require 'logic/User.php';
+require 'logic/Project.php';
 require 'ToolsDAO.php';
 
 // Gère la base pour les objets Project

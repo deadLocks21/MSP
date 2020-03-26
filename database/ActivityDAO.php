@@ -1,7 +1,7 @@
 <?php
-require 'Project.php';
-require 'Activity.php';
-require 'User.php';
+require 'logic/Project.php';
+require 'logic/Activity.php';
+require 'logic/User.php';
 require 'ToolsDAO.php';
 
 // Classe gérant la persistance en BDD des activités
@@ -62,7 +62,7 @@ class ActivityDAO{
                 $statut = "en cours";
                 break;
         }
-        
+
         $tDAO->call("CALL AlterActivity($id, '$statut');");
     }
 }
