@@ -1,2 +1,4 @@
-<?php
-echo "Tout OK";
+<?
+require '/var/www/public/ihm/MainWindow.php';
+
+new MainWindow();
