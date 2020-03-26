@@ -5,5 +5,3 @@ class ActivityState{
     const FINISHED='FINISHED';
     const CANCELED='CANCELED';
 }
-
-header('Location: http://192.168.1.27');

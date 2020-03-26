@@ -18,7 +18,7 @@ class LoginWindow{
             <p>Password :</p>
             <p><input id=\"password\" type=\"text\"></p>
             <br />
-            <p><input type=\"submit\" value=\"Connect\"><a href=\"http://www.google.com\"><input type=\"button\" value=\"Cancel\"></a></p>
+            <p><input type=\"submit\" value=\"Connect\"><a href=\"http://192.168.1.27\"><input type=\"button\" value=\"Cancel\"></a></p>
         </form>
     </body>
 </html>";
@@ -45,5 +45,3 @@ class LoginWindow{
 
     }
 }
-
-header('Location: http://192.168.1.27');

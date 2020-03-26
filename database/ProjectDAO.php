@@ -30,5 +30,3 @@ class ProjectDAO{
 //$pdao = new ProjectDAO();
 //$p = $pdao->ReadProjects($u);
 //echo print_r($p)."\n";
-
-header('Location: http://192.168.1.27');

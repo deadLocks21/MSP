@@ -19,5 +19,3 @@ class BadActivityStateError extends LogicError{
         parent::__construct($msg, 0);
     }
 }
-
-header('Location: http://192.168.1.27');

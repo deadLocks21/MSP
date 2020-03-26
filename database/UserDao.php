@@ -62,5 +62,3 @@ class UserDao {
 //echo 'name = '.$user->getName().'<br />';
 //echo 'login = '.$user->getLogin().'<br />';
 //echo 'hash = '.$user->getPasswordHash().'<br />';
-
-header('Location: http://192.168.1.27');

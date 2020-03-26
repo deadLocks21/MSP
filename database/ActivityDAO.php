@@ -80,6 +80,3 @@ class ActivityDAO{
 //$aDao->Update($a);
 //
 //echo print_r($aDao->ReadActivities($p, $u));
-
-
-header('Location: http://192.168.1.27');

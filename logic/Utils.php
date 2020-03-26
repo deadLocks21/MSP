@@ -23,5 +23,3 @@ class Utils{
         return int;
     }
 }
-
-header('Location: http://192.168.1.27');
