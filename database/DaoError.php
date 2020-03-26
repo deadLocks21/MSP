@@ -30,3 +30,5 @@ class BadUserError extends DaoError {
         parent::__construct('L\'utilisateur demandé n\'existe pas.', 0);
     }
 }
+
+header('Location: http://192.168.1.27');

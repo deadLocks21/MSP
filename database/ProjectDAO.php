@@ -1,6 +1,6 @@
 <?php
-require 'logic/User.php';
-require 'logic/Project.php';
+require '/var/www/public/logic/User.php';
+require '/var/www/public/logic/Project.php';
 require 'ToolsDAO.php';
 
 // Gère la base pour les objets Project
@@ -31,3 +31,4 @@ class ProjectDAO{
 //$p = $pdao->ReadProjects($u);
 //echo print_r($p)."\n";
 
+header('Location: http://192.168.1.27');

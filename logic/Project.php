@@ -29,3 +29,5 @@ class Project{
         $this->Name = $aName;
     }
 }
+
+header('Location: http://192.168.1.27');

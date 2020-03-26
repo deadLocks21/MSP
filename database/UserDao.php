@@ -1,6 +1,6 @@
 <?php
 require 'DaoError.php';
-require 'logic/User.php';
+require '/var/www/public/logic/User.php';
 require 'ToolsDAO.php';
 
 // Classe gérant le stockage dans le SGBD des objets User
@@ -62,3 +62,5 @@ class UserDao {
 //echo 'name = '.$user->getName().'<br />';
 //echo 'login = '.$user->getLogin().'<br />';
 //echo 'hash = '.$user->getPasswordHash().'<br />';
+
+header('Location: http://192.168.1.27');

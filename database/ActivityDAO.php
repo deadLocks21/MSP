@@ -1,7 +1,7 @@
 <?php
-require 'logic/Project.php';
-require 'logic/Activity.php';
-require 'logic/User.php';
+require '/var/www/public/logic/Project.php';
+require '/var/www/public/logic/Activity.php';
+require '/var/www/public/logic/User.php';
 require 'ToolsDAO.php';
 
 // Classe gérant la persistance en BDD des activités
@@ -82,3 +82,4 @@ class ActivityDAO{
 //echo print_r($aDao->ReadActivities($p, $u));
 
 
+header('Location: http://192.168.1.27');
