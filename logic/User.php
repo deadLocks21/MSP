@@ -13,27 +13,6 @@ class User{
 
 
 
-    // Save
-    public function save(){
-        $myUser = array(
-            "ID" => $this->getID(),
-            "Name" => $this->getName(),
-            "Login" => $this->getLogin(),
-            "PasswordHash" => $this->getPasswordHash()
-        );
-
-        return $myUser;
-    }
-
-    // Complete
-    public function complete(array $myU){
-        $this->setID($myU['ID']);
-        $this->setName($myU['Name']);
-        $this->setLogin($myU['Login']);
-        $this->setPasswordHash($myU['PasswordHash']);
-    }
-
-
 
     // Getter de la class User
     public function getID(){
