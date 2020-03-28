@@ -1,5 +1,6 @@
 <?php
 require 'ToolsIHM.php';
+require '/var/www/public/database/ProjectDAO.php';
 
 /**Classe permettant d'afficher la page de récap des projets ou rien en fonction de si un user est connected..*/
 class MainWindow{
@@ -16,7 +17,7 @@ class MainWindow{
 
 
         $button = $this->getButtons($co);
-        $corps = $this->getCorps($co);
+        $corps = $this->getCorps($co, $user);
         $userName = $this->getUN($co, $user);
 
 
@@ -66,15 +67,26 @@ class MainWindow{
      *
      *
      * @param bool $u TRUE si un user est connecté, FALSE sinon
+     * @param User $user Variable contenant l'utilisateur connnecté (ou non).
      *
      * @return string Choissis ce qui doit etre affiché en fonction de $u
      */
-    private function getCorps(bool $u){
+    private function getCorps(bool $u, $user){
         if($u){
-            $crp = '<ul>
-            <li><a>Projet 01</a></li>
-            <li><a>Projet 02</a></li>
-        </ul>';
+            $pDAO = new ProjectDAO();
+            $crp = "<ul>\n";
+
+            $projects = $pDAO->ReadProjects($user);
+
+
+            foreach ($projects as $p){
+                $id = $p->getID();
+                $name = $p->getName();
+
+                $crp .= "            <li><a href=\"action/MainWindow.ChooseProject.php?pN=$id\">Projet $name</a</li>\n";
+            }
+
+            $crp .= '        </ul>';
         } else {
             $crp = '';
         }
