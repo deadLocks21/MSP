@@ -8,7 +8,7 @@ class ProjectDAO{
     public function ReadProjects(User $user){
         $tDAO = new ToolsDAO();
 
-         $projects = $tDAO->query("CALL ReadProjects('".$user->getLogin()."');");
+         $projects = $tDAO->query("CALL ReadProjects(?);", array($user->getLogin()));
 
         $projDuU = array();
         foreach($projects as $proj){

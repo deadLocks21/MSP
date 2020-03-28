@@ -10,31 +10,14 @@ if(!isset($_SESSION['UserConnected'])){
 
 
 class ToolsIHM{
-    private $UC;
-
     public function __construct(){
-        $this->setUC($_SESSION['UserConnected']);
+        $this->setUCArray($_SESSION['UserConnected']);
     }
 
 
 
-    // Getter et Setter du type User
-    public function getUC(){
-        return $this->UC;
-    }
-
-    public function setUC($UC){
-        $this->UC = $UC;
-        $this->saveUC();
-    }
-
-
-
-    // Getter et Setter en array
-    public function getUCArray(){
-        $return = null;
-        $user = $this->getUC();
-
+    // Getter et Setter
+    public function setUC($user) {
         if ($user != null){
             $return = array(
                 "ID" => $user->getID(),
@@ -42,25 +25,71 @@ class ToolsIHM{
                 "Login" => $user->getLogin(),
                 "PasswordHash" => $user->getPasswordHash()
             );
+        } else {
+            $return = null;
         }
 
 
-        return $return;
+        $this->setUCArray($return);
     }
 
-    public function setUCArray(array $myU){
-        $u = new User($myU['ID']);
-        $u->setName($myU['Name']);
-        $u->setLogin($myU['Login']);
-        $u->setPasswordHash($myU['PasswordHash']);
+    public function getUC(){
+        $myU = $this->getUCArray();
+        $u = null;
 
-        $this->setUC($u);
+        if(isset($myU)){
+            $u = new User($myU['ID']);
+            $u->setName($myU['Name']);
+            $u->setLogin($myU['Login']);
+            $u->setPasswordHash($myU['PasswordHash']);
+        }
+
+        return $u;
+    }
+
+
+
+
+    // Getter et Setter en User
+    public function getUCArray(){
+        return $_SESSION['UserConnected'];
+    }
+
+    public function setUCArray($UC){
+        $_SESSION['UserConnected'] = $UC;
     }
 
 
 
     // Méthodes
-    private function saveUC(){
-        $_SESSION['UserConnected'] = $this->getUCArray();
+    public function setSessionVar($varName, $varContent){
+        $_SESSION[$varName] = $varContent;
     }
+
+    public function getSessionVar($varName){
+        $return = null;
+
+        if(isset($_SESSION[$varName])){
+            $return = $_SESSION[$varName];
+        }
+
+        return $return;
+    }
+
+
+    public function setLoginFail($varContent){
+        $_SESSION['loginFail'] = $varContent;
+    }
+
+    public function getLoginFail(){
+        $return = null;
+
+        if(isset($_SESSION['loginFail'])){
+            $return = $_SESSION['loginFail'];
+        }
+
+        return $return;
+    }
+
+
 }

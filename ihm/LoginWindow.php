@@ -2,6 +2,10 @@
 // Classe LoginWindow
 class LoginWindow{
     public function __construct(){
+        echo $this->callPage();
+    }
+
+    private function callPage(){
         echo "<!doctype html>
 <html lang=\"fr\">
     <head>

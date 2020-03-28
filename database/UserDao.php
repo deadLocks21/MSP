@@ -1,7 +1,7 @@
 <?php
 require 'DaoError.php';
-require '/var/www/public/logic/User.php';
 require 'ToolsDAO.php';
+//require '/var/www/public/logic/User.php';
 
 // Classe gérant le stockage dans le SGBD des objets User
 class UserDao {
@@ -9,14 +9,14 @@ class UserDao {
         $tDAO = new ToolsDAO();
         $user = null;
 
-        $UaP = $tDAO->query("CALL UserAndPass('$login', '$password');");
+        $UaP = $tDAO->query("CALL UserAndPass(?, ?);", array($login, $password));
 
         $loginTrue = $UaP[0][0];
         $passTrue = $UaP[1][0];
 
         if($loginTrue == 1){
             if($passTrue == 1){
-                $info = $tDAO->query("CALL GetUser('$login', '$password');");
+                $info = $tDAO->query("CALL GetUser(?, ?);", array($login, $password));
                 $user = new User($info[0]['ID']);
 
                 $user->setName($info[0]['nom']);
@@ -40,7 +40,7 @@ class UserDao {
         $login = $user->getLogin();
         $password = $user->getPasswordHash();
 
-        $tDAO->call("CALL AlterUser($id, '$name', '$login', '$password');");
+        $tDAO->call("CALL AlterUser(?, ?, ?, ?);", array($id, $name, $login, $password));
     }
 }
 

@@ -25,7 +25,7 @@ class ActivityDAO{
     public function ReadActivities(Project $p, User $u){
         $tDAO = new ToolsDAO();
 
-        $activities = $tDAO->query("CALL ReadActivities(".$p->getID().", ".$u->getID().");");
+        $activities = $tDAO->query("CALL ReadActivities(?, ?);", array($p->getID(), $u->getID()));
 
         $lesAct = array();
         foreach ($activities as $a){
@@ -63,7 +63,7 @@ class ActivityDAO{
                 break;
         }
 
-        $tDAO->call("CALL AlterActivity($id, '$statut');");
+        $tDAO->call("CALL AlterActivity(?, ?);", array($id, $statut));
     }
 }
 
@@ -75,7 +75,7 @@ class ActivityDAO{
 //echo print_r($aDao->ReadActivities($p, $u));
 //
 //$a = ($aDao->ReadActivities($p, $u))[0];
-//$a->setState(ActivityState::FINISHED);
+//// $a->setState(ActivityState::FINISHED);
 //
 //$aDao->Update($a);
 //

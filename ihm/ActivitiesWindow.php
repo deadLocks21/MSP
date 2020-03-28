@@ -2,7 +2,11 @@
 // Classe ActivitiesWindow
 class ActivitiesWindow{
     public function __construct(){
-        echo "<!doctype html>
+        echo $this->callPage();
+    }
+
+    private function callPage(){
+        return "<!doctype html>
 <html lang=\"fr\">
     <head>
         <meta charset=\"utf-8\">

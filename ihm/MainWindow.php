@@ -1,37 +1,43 @@
 <?php
-session_start();
-require '/var/www/public/logic/User.php';
-
-if(!isset($_SESSION['UserConnected'])){
-    $_SESSION['UserConnected'] = null;
-}
+require 'ToolsIHM.php';
 
 // Classe MainWindow
 class MainWindow{
+    private $tIHM;
+
+    // Getter et Setter
+    private function getTIHM() {
+        return $this->tIHM;
+    }
+
+    private function setTIHM() {
+        $this->tIHM = new ToolsIHM();
+    }
+
+
+
+    // Constructeur
     public function __construct(){
-        $button = "";
-        $corps = "";
-        $userName = "";
+        $this->setTIHM();
 
-        if($_SESSION['UserConnected'] == null){
-            $button = '<p><a href=\'login.php\'>Connexion</a></p>
-        <p><a>Profil</a></p>';
-        } else {
-            $button = '<p><a>Déconnexion</a></p>
-        <p><a>Profil</a></p>';
-
-            $corps = '<ul>
-            <li><a>Projet 01</a></li>
-            <li><a>Projet 02</a></li>
-        </ul>';
-
-            $user = new User(1);
-            $user->complete($_SESSION['UserConnected']);
-            $userName = strtoupper($user->getName());
-        }
+        echo $this->callPage();
+    }
 
 
-        echo "<!doctype html>
+
+    // Méthodes
+    private function callPage(){
+        $tIHM = $this->getTIHM();
+        $user = $tIHM->getUC();
+        $co = isset($user);
+
+
+        $button = $this->getButtons($co);
+        $corps = $this->getCorps($co);
+        $userName = $this->getUN($co, $user);
+
+
+        return "<!doctype html>
 <html lang=\"fr\">
     <head>
         <meta charset=\"utf-8\">
@@ -43,11 +49,46 @@ class MainWindow{
         
         <br />
 
-        <p>Bienvenu technicien $userName</p>
+        <p>$userName</p>
 
         $corps
         
     </body>
 </html>";
+    }
+
+    private function getButtons(bool $u){
+        if($u){
+            $button = '<p><a href="/action/LoginWindow.Disconnect.php">Déconnexion</a></p>
+        <p><a>Profil</a></p>';
+        } else {
+            $button = '<p><a href="login.php">Connexion</a></p>
+        <p><a>Profil</a></p>';
+        }
+
+        return $button;
+    }
+
+    private function getCorps(bool $u){
+        if($u){
+            $crp = '<ul>
+            <li><a>Projet 01</a></li>
+            <li><a>Projet 02</a></li>
+        </ul>';
+        } else {
+            $crp = '';
+        }
+
+        return $crp;
+    }
+
+    private function getUN(bool $u, $user){
+        if($u){
+            $return = 'Bienvenu technicien ' . strtoupper($user->getName());
+        } else {
+            $return = '';
+        }
+
+        return $return;
     }
 }

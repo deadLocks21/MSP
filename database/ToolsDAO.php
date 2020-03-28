@@ -11,10 +11,12 @@ class ToolsDAO{
         return null;
     }
 
-    public function query($q){
+    public function query($q, $p){
         $c = $this->openCon();
 
-        $req = $c->query($q);
+        $req = $c->prepare($q);
+        $req->execute($p);
+
         $res = $req->fetchAll();
         $req->closeCursor();
 
@@ -23,10 +25,11 @@ class ToolsDAO{
         return $res;
     }
 
-    public function call($q){
+    public function call($q, $p){
         $c = $this->openCon();
 
-        $c->query($q);
+        $r = $c->prepare($q);
+        $r->execute($p);
 
         $c = $this->closeCon();
     }
