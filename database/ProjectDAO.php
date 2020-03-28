@@ -31,7 +31,7 @@ class ProjectDAO{
 
 //$u = new User(1);
 //$u->setName('Martin');
-//$u->setLogin('ybenaissa');
+//$u->setLogin('root');
 //$u->setPasswordHash('746F746F');
 //
 //

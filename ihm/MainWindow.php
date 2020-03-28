@@ -83,7 +83,7 @@ class MainWindow{
                 $id = $p->getID();
                 $name = $p->getName();
 
-                $crp .= "            <li><a href=\"action/MainWindow.ChooseProject.php?pN=$id\">Projet $name</a</li>\n";
+                $crp .= "            <li><a href=\"action/MainWindow.ChooseProject.php?pID=$id\">Projet $name</a</li>\n";
             }
 
             $crp .= '        </ul>';

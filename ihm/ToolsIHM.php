@@ -74,36 +74,6 @@ class ToolsIHM{
 
 
     /**
-     * Permet de setter une variable de SESSION
-     *
-     *
-     * @param string $varName Nom de la variable à set.
-     * @param mixed $varContent Contenu de la variable.
-     */
-    public function setSessionVar($varName, $varContent){
-        $_SESSION[$varName] = $varContent;
-    }
-
-    /**
-     * Permet de get une variable de session
-     *
-     *
-     * @param string $varName Nom de la variable
-     *
-     * @return mixed|null Retourne null si la variable n'est pas set.
-     */
-    public function getSessionVar($varName){
-        $return = null;
-
-        if(isset($_SESSION[$varName])){
-            $return = $_SESSION[$varName];
-        }
-
-        return $return;
-    }
-
-
-    /**
      * Permet de set la variable loginFail de SESSION
      *
      *
@@ -133,4 +103,33 @@ class ToolsIHM{
     }
 
 
+    /**
+     * Permet de définir variable idProjSel de SESSION.
+     *
+     *
+     * @param int $varContent Contient l'ID du projet selectionné.
+     */
+    public function setIdProjSel($varContent){
+        if($varContent == 0){
+            $_SESSION['idProjSel'] = null;
+        } else {
+            $_SESSION['idProjSel'] = $varContent;
+        }
+    }
+
+    /**
+     * Permet de récupérer la valeur de idProjSel de SESSION.
+     *
+     *
+     * @return int|null Vaut null si la variable n'est pas set.
+     */
+    public function getIdProjSel(){
+        $return = null;
+
+        if(isset($_SESSION['idProjSel'])){
+            $return = $_SESSION['idProjSel'];
+        }
+
+        return $return;
+    }
 }

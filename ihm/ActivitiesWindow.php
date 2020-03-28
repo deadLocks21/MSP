@@ -1,12 +1,14 @@
 <?php
-
 /**Classe permettant d'afficher la page avec les différents activités d'un projet de UserConnected.*/
 class ActivitiesWindow{
-    public function __construct(){
-        echo $this->callPage();
+    public function __construct($acts){
+        echo $this->callPage($acts);
     }
 
-    private function callPage(){
+    private function callPage($acts){
+        $codeActs = $this->setActs($acts);
+
+
         return "<!doctype html>
 <html lang=\"fr\">
     <head>
@@ -16,10 +18,23 @@ class ActivitiesWindow{
     </head>
     <body>
         <ul>
-            <li><a>Activité 01</a></li>
-            <li><a>Activité 02</a></li>
+            $codeActs
         </ul>
     </body>
 </html>";
+    }
+
+    private function setActs($acts){
+        $lis = "";
+
+        foreach ($acts as $a){
+            $actID = $a->getID();
+            $actName = $a->getSummary();
+            $actState = $a->getState();
+
+            $lis .= "        <li><a href=\"action/ActivitiesWindow.ChoseActivity?id=$actID\">$actName ($actState)</a></li>\n";
+        }
+
+        return $lis;
     }
 }
