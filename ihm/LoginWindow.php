@@ -1,5 +1,5 @@
 <?php
-// Classe LoginWindow
+/**Classe permettant d'afficher la page pour se logguer.*/
 class LoginWindow{
     public function __construct(){
         echo $this->callPage();
@@ -24,15 +24,5 @@ class LoginWindow{
         </form>
     </body>
 </html>";
-    }
-
-
-    // Méthodes
-    public function Connect(){
-
-    }
-
-    public function Cancel(){
-
     }
 }

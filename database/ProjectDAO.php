@@ -3,8 +3,16 @@ require '/var/www/public/logic/User.php';
 require '/var/www/public/logic/Project.php';
 require 'ToolsDAO.php';
 
-// Gère la base pour les objets Project
+/**Permet de gérer les projets présent dans la base de données.*/
 class ProjectDAO{
+    /**
+     * Permet de récupérer les projets d'un utilisateur.
+     *
+     *
+     * @param User $user Utilisateur dont on cherche les projets.
+     *
+     * @return array Array contenant les différents projets rattaché à un User.
+     */
     public function ReadProjects(User $user){
         $tDAO = new ToolsDAO();
 

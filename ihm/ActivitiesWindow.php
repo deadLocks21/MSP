@@ -1,5 +1,6 @@
 <?php
-// Classe ActivitiesWindow
+
+/**Classe permettant d'afficher la page avec les différents activités d'un projet de UserConnected.*/
 class ActivitiesWindow{
     public function __construct(){
         echo $this->callPage();

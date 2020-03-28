@@ -1,5 +1,5 @@
 <?php
-// Classe ProfileWindow
+/**Classe permettant d'afficher les infos sur un rpofile et le modifier.*/
 class ProfileWindow{
     public function __construct(){
         echo $this->callPage();

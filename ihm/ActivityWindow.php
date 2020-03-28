@@ -1,5 +1,5 @@
 <?php
-// Classe ActivityWindow
+/**Classe permettant d'afficher une activité d'un projet de UserConnected.*/
 class ActivityWindow{
     public function __construct(){
         echo $this->callPage();

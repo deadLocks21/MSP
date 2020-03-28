@@ -3,8 +3,22 @@ require 'DaoError.php';
 require 'ToolsDAO.php';
 //require '/var/www/public/logic/User.php';
 
-// Classe gérant le stockage dans le SGBD des objets User
+/**
+ * Permet de gérer un utilisateur contenu dans la DB.
+ */
 class UserDao {
+    /**
+     * Permet de récupérer les infos sur un utilisateur.
+     *
+     *
+     * @param string $login Login fournit dans le formulaire de connexion.
+     * @param string $password MDP fournit dans le formulaire.
+     *
+     * @return User|null Retourne un User si les infos sont bonnes ou null le cas échéant.
+     *
+     * @throws BadPasswordError Erreur retournée dans le cas ou le MDP rentré est faux.
+     * @throws BadUserError Pareil mais pour le login
+     */
     public function Read(string $login, string $password){
         $tDAO = new ToolsDAO();
         $user = null;
@@ -32,6 +46,12 @@ class UserDao {
         return $user;
     }
 
+    /**
+     * Permet de update les information d'un utilisateur.
+     *
+     *
+     * @param User $user
+     */
     public function Update(User $user){
         $tDAO = new ToolsDAO();
 

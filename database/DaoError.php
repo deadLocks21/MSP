@@ -1,5 +1,7 @@
 <?php
-// Ancêtre général des exceptions (erreurs) possibles.
+/**
+ *Ancêtre générale des exceptions de la base de données.
+ */
 class DaoError extends Exception {
     public function __construct($msg, $code = 0)
     {
@@ -7,7 +9,7 @@ class DaoError extends Exception {
     }
 }
 
-// Erreur dans la connexion avec la base de données
+/**Erreur dans la base de données*/
 class DataBaseError extends DaoError {
     // Constructeur de la class
     public function __construct(){
@@ -15,7 +17,7 @@ class DataBaseError extends DaoError {
     }
 }
 
-// Type d'exception indiquant que le mot de passe n'est pas correct
+/**Exception indiquant une erreur de mot de passe. */
 class BadPasswordError extends DaoError {
     // Constructeur de la class
     public function __construct(){
@@ -23,7 +25,7 @@ class BadPasswordError extends DaoError {
     }
 }
 
-// Type d'exception indiquant qu'un utilisateur n'existe pas
+/**Erreur indiquant qu'un login n'est pas bon.*/
 class BadUserError extends DaoError {
     // Constructeur de la class
     public function __construct(){

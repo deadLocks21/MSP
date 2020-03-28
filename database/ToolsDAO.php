@@ -1,16 +1,38 @@
 <?php
-// Class qui contient une connection à la base de données et des outils pour les class de gestion de la DB
-class ToolsDAO{
-    private $conn = null;
 
+/**Contient les outils de base de la gestion de la base de données.*/
+class ToolsDAO{
+    /**Permet d'ouvrir une connection avec PDO
+     *
+     *
+     * @return PDO Instance de la classe permettant d'éxecuter les requêtes SQL.
+     */
     private function openCon(){
         return new PDO('mysql:host=localhost;dbname=dbMSP', 'DaoMSP', '!MdpDeMSP21.');
     }
 
+    /**
+     * Permet de fermer la connection.
+     * @return null
+     */
     private function closeCon(){
         return null;
     }
 
+    /**
+     * Execute la requête $q avec les paramètre $p et retourne le contenu du SELECT
+     *
+     *
+     * @param string $q
+     * Représente la requête en elle-même.
+     *
+     * @param array $p
+     * Paramètre de la requête passé sous forme d'une array.
+     *
+     *
+     * @return array
+     * Le résultat de la requête.
+     */
     public function query($q, $p){
         $c = $this->openCon();
 
@@ -25,6 +47,16 @@ class ToolsDAO{
         return $res;
     }
 
+    /**
+     * Permet d'executer une procedure mysql sans retour.
+     *
+     *
+     * @param string $q
+     * Appel de la procédure
+     *
+     * @param array $p
+     * Paramètre(s) de la procédure.
+     */
     public function call($q, $p){
         $c = $this->openCon();
 
