@@ -32,7 +32,7 @@ class ActivitiesWindow{
             $actName = $a->getSummary();
             $actState = $a->getState();
 
-            $lis .= "        <li><a href=\"action/ActivitiesWindow.ChoseActivity?id=$actID\">$actName ($actState)</a></li>\n";
+            $lis .= "        <li><a href=\"action/ActivitiesWindow.ChoseActivity.php?id=$actID\">$actName ($actState)</a></li>\n";
         }
 
         return $lis;

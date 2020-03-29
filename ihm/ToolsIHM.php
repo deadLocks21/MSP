@@ -132,4 +132,36 @@ class ToolsIHM{
 
         return $return;
     }
+
+
+    /**
+     * Permet de définir variable idProjSel de SESSION.
+     *
+     *
+     * @param int $varContent Contient l'ID du projet selectionné.
+     */
+    public function setIdActSel($varContent){
+        if($varContent == 0){
+            $_SESSION['idActSel'] = null;
+        } else {
+            $_SESSION['idActSel'] = $varContent;
+        }
+    }
+
+    /**
+     * Permet de récupérer la valeur de idProjSel de SESSION.
+     *
+     *
+     * @return int|null Vaut null si la variable n'est pas set.
+     */
+    public function getIdActSel(){
+        $return = null;
+
+        if(isset($_SESSION['idActSel'])){
+            $return = $_SESSION['idActSel'];
+        }
+
+        return $return;
+    }
 }
+//setIdActSel

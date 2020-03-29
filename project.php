@@ -1,6 +1,7 @@
 <?php
 require '/var/www/public/ihm/ToolsIHM.php';
 require '/var/www/public/database/ActivityDAO.php';
+require '/var/www/public/logic/Activity.php';
 require '/var/www/public/ihm/ActivitiesWindow.php';
 
 $tIHM = new ToolsIHM();

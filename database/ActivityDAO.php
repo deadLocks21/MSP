@@ -1,6 +1,6 @@
 <?php
 require '/var/www/public/logic/Project.php';
-require '/var/www/public/logic/Activity.php';
+// require '/var/www/public/logic/Activity.php';
 // require '/var/www/public/logic/User.php';
 require 'ToolsDAO.php';
 

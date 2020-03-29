@@ -2,7 +2,8 @@
 
 /**Contient les outils de base de la gestion de la base de données.*/
 class ToolsDAO{
-    /**Permet d'ouvrir une connection avec PDO
+    /**
+     * Permet d'ouvrir une connection avec PDO
      *
      *
      * @return PDO Instance de la classe permettant d'éxecuter les requêtes SQL.
