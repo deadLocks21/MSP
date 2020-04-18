@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '/var/www/public/logic/User.php';
+require './logic/User.php';
 
 // Variable vaut null si aucun utilisateur est connecté.
 if(!isset($_SESSION['UserConnected'])){

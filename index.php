@@ -1,4 +1,5 @@
 <?
-require '/var/www/public/ihm/MainWindow.php';
+require './ihm/MainWindow.php';
 
 new MainWindow();
+// echo print_r($_SERVER);

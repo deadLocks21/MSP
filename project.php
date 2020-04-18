@@ -1,8 +1,8 @@
 <?php
-require '/var/www/public/ihm/ToolsIHM.php';
-require '/var/www/public/database/ActivityDAO.php';
-require '/var/www/public/logic/Activity.php';
-require '/var/www/public/ihm/ActivitiesWindow.php';
+require './ihm/ToolsIHM.php';
+require './database/ActivityDAO.php';
+require './logic/Activity.php';
+require './ihm/ActivitiesWindow.php';
 
 $tIHM = new ToolsIHM();
 
@@ -19,5 +19,5 @@ if(isset($projID) AND $projID != 0 AND isset($user)){
 
     new ActivitiesWindow($activities);
 } else {
-    header('Location: http://192.168.1.27/');
+    header('Location: http://'.$_SERVER['HTTP_HOST'].'/');
 }

@@ -1,4 +1,4 @@
 <?php
-require '/var/www/public/ihm/LoginWindow.php';
+require './ihm/LoginWindow.php';
 
 new LoginWindow();

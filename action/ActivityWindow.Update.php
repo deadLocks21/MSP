@@ -1,2 +1,2 @@
 <?php
-header('Location: http://192.168.1.27/project.php');
+header('Location: http://'.$_SERVER['HTTP_HOST'].'/project.php');

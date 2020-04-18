@@ -1,5 +1,5 @@
 <?php
-require '/var/www/public/ihm/ToolsIHM.php';
+require './ihm/ToolsIHM.php';
 
 $tIHM = new ToolsIHM();
 
@@ -10,7 +10,7 @@ $user = $tIHM->getUC();
 if(is_int($id) AND $id != 0 AND isset($user)){
     $tIHM->setIdActSel($id);
 
-    header('Location: http://192.168.1.27/activite.php');
+    header('Location: http://'.$_SERVER['HTTP_HOST'].'/activite.php');
 } else {
-    header('Location: http://192.168.1.27/');
+    header('Location: http://'.$_SERVER['HTTP_HOST'].'/');
 }

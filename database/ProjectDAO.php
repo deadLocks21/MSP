@@ -1,6 +1,6 @@
 <?php
 // require '/var/www/public/logic/User.php';
-require '/var/www/public/logic/Project.php';
+require './logic/Project.php';
 require 'ToolsDAO.php';
 
 /**Permet de gérer les projets présent dans la base de données.*/

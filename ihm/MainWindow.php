@@ -1,6 +1,6 @@
 <?php
 require 'ToolsIHM.php';
-require '/var/www/public/database/ProjectDAO.php';
+require './database/ProjectDAO.php';
 
 /**Classe permettant d'afficher la page de récap des projets ou rien en fonction de si un user est connected..*/
 class MainWindow{
