@@ -2,20 +2,58 @@
 require 'LogicError.php';
 require 'ActivityState.php';
 
-// Représente une activité
+/**
+ * Classe permetant de stocker une activité.
+ */
 class Activity{
+    /**
+     * @var int ID de l'activité.
+     * Unique.
+     */
     private $ID;
+    /**
+     * @var ActivityState Etat stocké en francais dans la DB.
+     */
     private $state;
+    /**
+     * @var string Résumé de l'activité.
+     */
     private $summary;
+    /**
+     * @var string Date de début de l'activité.
+     */
     private $start;
+    /**
+     * @var string Date de fin de l'activité.
+     */
     private $end;
+    /**
+     * @var int Durée estimé de la tache.
+     */
     private $duration;
+    /**
+     * @var string Nom du type de l'activité.
+     */
     private $Name;
+    /**
+     * @var int Numéro de la catégorie de l'activité.
+     */
     private $Kind;
+    /**
+     * @var string Détails de l'activité.
+     */
     private $Details;
 
 
-    // Constructeur de la class
+    /**
+     * Activity constructor.
+     *
+     *
+     * @param int $aID              ID de l'activité.
+     * @param string $aName         Nom de la catégorie de l'activité.
+     * @param string $aSummary      Résumé de l'activité. Equivaut aussi au nom de cette dernière.
+     * @param ActivityState $aState Etat de l'activité.
+     */
     public function __construct(int $aID, string $aName, string $aSummary,$aState){
         $this->setID($aID);
         $this->setName($aName);
@@ -24,66 +62,116 @@ class Activity{
     }
 
 
-    // Getter de la class
-    public function getID()
-    {
+    // ASSESSEURS DES ATTRIBUTS DE LA CLASS
+    /**
+     * Assesseur de la variable ID.
+     *
+     *
+     * @return int ID de l'activité.
+     */
+    public function getID(){
         return $this->ID;
     }
 
-    public function getState()
-    {
+    /**
+     * Assesseur de la variable state.
+     *
+     *
+     * @return ActivityState Etat de l'activité.
+     */
+    public function getState(){
         return $this->state;
     }
 
-    public function getSummary()
-    {
+    /**
+     * Assesseur de la variable summary.
+     *
+     *
+     * @return string Résumé de l'activité.
+     */
+    public function getSummary(){
         return $this->summary;
     }
 
-    public function getStart()
-    {
+    /**
+     * Assesseur de la variable start.
+     *
+     *
+     * @return string Date de début de l'activité.
+     */
+    public function getStart(){
         return $this->start;
     }
 
-    public function getEnd()
-    {
+    /**
+     * Assesseur de la variable end.
+     *
+     *
+     * @return string Date de fin de l'activité.
+     */
+    public function getEnd(){
         return $this->end;
     }
 
-    public function getDuration()
-    {
+    /**
+     * Assesseur de la variable duration.
+     *
+     *
+     * @return int Durée estimée de l'activité.
+     */
+    public function getDuration(){
         return $this->duration;
     }
 
-    public function getProbaleEnd()
-    {
-        return $this->probaleEnd;
-    }
-
-    public function getName()
-    {
+    /**
+     * Assesseur de la variable name.
+     *
+     *
+     * @return string Nom de la catégorie de l'activité.
+     */
+    public function getName(){
         return $this->Name;
     }
 
-    public function getKind()
-    {
+    /**
+     * Assesseur de la variable Kind.
+     *
+     *
+     * @return int ID de la catégorie de l'activité.
+     */
+    public function getKind(){
         return $this->Kind;
     }
 
-    public function getDetails()
-    {
+    /**
+     * Assesseur de la variable Details.
+     *
+     *
+     * @return string Détails de l'activité.
+     */
+    public function getDetails(){
         return $this->Details;
     }
 
 
-    // Setter de la class
-    private function setID(int $aID)
-    {
+    // MUTATTEURS DES ATTRIBUTS DE LA CLASS
+    /**
+     * Mutateur de la variable ID.
+     *
+     *
+     * @param int $aID ID de l'activité
+     */
+    private function setID(int $aID){
         $this->ID = $aID;
     }
 
-    private function setState($aState)
-    {
+    /**
+     * Mutateur de la variable state.
+     *
+     *
+     * @param ActivityState $aState Etat de l'activité
+     */
+    private function setState($aState){
         if(in_array($aState, [ActivityState::CANCELED, ActivityState::FINISHED, ActivityState::ONGOING])){
             $this->state = $aState;
         }
@@ -92,15 +180,25 @@ class Activity{
         }
     }
 
-    public function setSummary(string $aSummary)
-    {
+    /**
+     * Mutateur de la variable summary.
+     *
+     *
+     * @param string $aSummary Résumé de l'activité
+     */
+    public function setSummary(string $aSummary){
         if($aSummary != '') {
             $this->summary = $aSummary;
         }
     }
 
-    public function setStart($aStart)
-    {
+    /**
+     * Mutateur de la variable start.
+     *
+     *
+     * @param string $aStart Date de début de l'activité
+     */
+    public function setStart($aStart){
         if($this->getEnd() == ''){
             $this->start = $aStart;
         }
@@ -109,8 +207,13 @@ class Activity{
         }
     }
 
-    public function setEnd($aEnd)
-    {
+    /**
+     * Mutateur de la variable end.
+     *
+     *
+     * @param string $aEnd Date de fin de l'activité
+     */
+    public function setEnd($aEnd){
         if($this->getStart() == ''){
             $this->end = $aEnd;
         }
@@ -119,28 +222,48 @@ class Activity{
         }
     }
 
-    public function setDuration(int $aDuration)
-    {
+    /**
+     * Mutateur de la variable duration.
+     *
+     *
+     * @param int $aDuration Durée prévue de l'activité
+     */
+    public function setDuration(int $aDuration){
         $this->duration = $aDuration;
     }
 
-    private function setName(string $aName)
-    {
+    /**
+     * Mutateur de la variable Name.
+     *
+     *
+     * @param string $aName Nom de la catégorie de l'activité
+     */
+    private function setName(string $aName){
         $this->Name = $aName;
     }
 
-    public function setKind(string $aKind)
-    {
+    /**
+     * Mutateur de la variable Kind.
+     *
+     *
+     * @param int $aKind ID de la catégorie de l'activité
+     */
+    public function setKind(int $aKind){
         $this->Kind = $aKind;
     }
 
-    public function setDetails(string $aDetails)
-    {
+    /**
+     * Mutateur de la variable Details.
+     *
+     *
+     * @param string $aDetails Détails de l'activité
+     */
+    public function setDetails(string $aDetails){
         $this->Details = $aDetails;
     }
 
 
-    // Méthodes de la class
+    // METHODES DE LA CLASS
     public function StartActivity(){
 
     }
