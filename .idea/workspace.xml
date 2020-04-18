@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c6e6899-b015-4598-9b80-0b2fc13af291" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/action/ActivitiesWindow.ChoseActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/action/ActivitiesWindow.ChoseActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/ActivityWindow.Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/action/ActivityWindow.Update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/LoginWindow.Connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/action/LoginWindow.Connect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/LoginWindow.Disconnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/action/LoginWindow.Disconnect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/MainWindow.ChooseProject.php" beforeDir="false" afterPath="$PROJECT_DIR$/action/MainWindow.ChooseProject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activite.php" beforeDir="false" afterPath="$PROJECT_DIR$/activite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/ActivityDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/ActivityDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/ProjectDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/ProjectDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihm/MainWindow.php" beforeDir="false" afterPath="$PROJECT_DIR$/ihm/MainWindow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihm/ToolsIHM.php" beforeDir="false" afterPath="$PROJECT_DIR$/ihm/ToolsIHM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihm/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/ihm/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/logic/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/project.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Users\deadLocks21\Documents\projet\MSP\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZfnIRSKUc7UmXlT3JKcrV8hIKV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\deadLocks21\Documents\projet\MSP\logic" />
+      <recent name="D:\Users\deadLocks21\Documents\projet\MSP\ihm" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\deadLocks21\Documents\projet\MSP\database" />
+      <recent name="D:\Users\deadLocks21\Documents\projet\MSP\logic" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c6e6899-b015-4598-9b80-0b2fc13af291" name="Default Changelist" comment="" />
+      <created>1585238936499</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585238936499</updated>
+      <workItem from="1585238939440" duration="9406000" />
+      <workItem from="1585388562036" duration="19086000" />
+      <workItem from="1585478444139" duration="6674000" />
+      <workItem from="1585487286086" duration="131000" />
+      <workItem from="1587208686100" duration="8763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="273" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1585391178948">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="273" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585391178948" />
+    <state x="736" y="404" width="447" height="385" key="ComposerInitDialogKey" timestamp="1585405325003">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="404" width="447" height="385" key="ComposerInitDialogKey/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585405325003" />
+    <state x="403" y="275" key="FileChooserDialogImpl" timestamp="1585487415758">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="403" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585487415758" />
+    <state x="721" y="334" key="NewPhpClassDialog" timestamp="1585409927916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="334" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585409927916" />
+    <state x="314" y="447" key="NewPhpFileDialog" timestamp="1585486470754">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="314" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585486470754" />
+    <state x="125" y="166" key="SettingsEditor" timestamp="1585405446155">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="125" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585405446155" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585487291509">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1585487291509" />
+  </component>
+</project>
