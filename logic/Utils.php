@@ -1,7 +1,17 @@
 <?php
-// Contient divers utilitaires pour l'ensemble de la couche métier
+
+/**
+ * Outils pour l'ensemble de la couche métier.
+ */
 class Utils{
-     //Retourne un hachage de pass.
+    /**
+     * Hash la variable $pass et la retourne.
+     *
+     *
+     * @param string $pass Mot de passe brut de l'utilisateur.
+     *
+     * @return string Hash du mot de passe.
+     */
     public function HashPassword(string $pass){
         $hash = '';
         $lenPass = strlen($pass);
@@ -13,12 +23,24 @@ class Utils{
         return strtoupper($hash);
     }
 
-    // Indique si le mot de passe respecte les consignes de sécurité.
+    /**
+     * Indique si le mot de passe respecte les consignes de sécurité.
+     *
+     *
+     * @param string $pass Mot de passe brut de l'utilisateur.
+     *
+     * @return bool Retourne TRUE si il respecte les conditions.
+     */
     public function IsPasswordSafe(string $pass){
         return boolean;
     }
 
-    // Indique le nombre de travail par jour pour une personne.
+    /**
+     * Indique le nombre de travail par jour pour une personne.
+     *
+     *
+     * @return int Nombre d'heures
+     */
     public function GetWorkHoursByDay(){
         return int;
     }
