@@ -1,6 +1,6 @@
 <?php
 /**Classe permettant d'afficher la page avec les différents activités d'un projet de UserConnected.*/
-class ActivitiesWindow{
+class ActivitiesWindow {
     public function __construct($acts){
         echo $this->callPage($acts);
     }
@@ -32,7 +32,7 @@ class ActivitiesWindow{
             $actName = $a->getSummary();
             $actState = $a->getState();
 
-            $lis .= "        <li><a href=\"action/ActivitiesWindow.ChoseActivity.php?id=$actID\">$actName ($actState)</a></li>\n";
+            $lis .= "        <li><a href=\"librairies/action_ActivitiesWindow.ChooseActivity.php?id=$actID\">$actName ($actState)</a></li>\n";
         }
 
         return $lis;

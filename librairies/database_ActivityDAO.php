@@ -46,12 +46,12 @@ class ActivityDAO{
 
         $lesAct = array();
         foreach ($activities as $a){
-            $act = new Activity($a['ActivitéID'], $a['nom'], $a['résumé'], $this->getState($a['statut']));
-            $act->setStart($a['dateDébut']);
-            $act->setEnd($a['dateFin']);
-            $act->setDuration($a['duréePrévue']);
+            $act = new Activity($a[0], 'Name à compléter', $a[4], $this->getState($a['statut']));
+            $act->setStart($a[8]);
+            $act->setEnd($a[9]);
+            $act->setDuration($a[3]);
             $act->setKind($a['IDType']);
-            $act->setDetails($a['détail']);
+            $act->setDetails($a[5]);
 
             $lesAct[] = $act;
         }

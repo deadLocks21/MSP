@@ -21,6 +21,7 @@ class Project{
      */
     public function __construct(int $aID){
         $this->setID($aID);
+        $this->setName('');
     }
 
 
