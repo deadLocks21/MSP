@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Outils pour l'ensemble de la couche métier.
  */

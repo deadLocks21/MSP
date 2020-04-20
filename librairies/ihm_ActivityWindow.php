@@ -33,7 +33,7 @@ class ActivityWindow{
         $fin
         <br />
 
-        <form action=\"action/ActivityWindow.Update.php\" method=\"POST\">
+        <form action=\"librairies/action_ActivityWindow.Update.php\" method=\"POST\">
             <p>Statut :</p>
             $statut
 

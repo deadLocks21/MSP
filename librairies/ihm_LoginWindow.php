@@ -14,7 +14,7 @@ class LoginWindow{
         <link rel=\"stylesheet\" href=\"style_sombre.css\">
     </head>
     <body>
-        <form action=\"action/LoginWindow.Connect.php\" method=\"POST\">
+        <form action=\"librairies/action_LoginWindow.Connect.php\" method=\"POST\">
             <p>Login :</p>
             <p><input name=\"login\" type=\"text\"></p>
             <p>Password :</p>

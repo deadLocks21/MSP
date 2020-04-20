@@ -21,6 +21,7 @@ class Project{
      */
     public function __construct(int $aID){
         $this->setID($aID);
+        $this->setName('');
     }
 
 
@@ -63,7 +64,7 @@ class Project{
      *
      * @param string $aName Nom du projet.
      */
-    public function setName(string $aName){
-        $this->Name = $aName;
+    public function setName($aName){
+        $this->Name = $aName == null ? '' : $aName;
     }
 }

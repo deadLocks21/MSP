@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Classe contenant les exceptions générales pour la couche métier
  */

@@ -1,6 +1,6 @@
 <?php
-require 'LogicError.php';
-require 'ActivityState.php';
+require 'logic_LogicError.php';
+require 'logic_ActivityState.php';
 
 /**
  * Classe permetant de stocker une activité.
@@ -54,7 +54,7 @@ class Activity{
      * @param string $aSummary      Résumé de l'activité. Equivaut aussi au nom de cette dernière.
      * @param ActivityState $aState Etat de l'activité.
      */
-    public function __construct(int $aID, string $aName, string $aSummary,$aState){
+    public function __construct(int $aID, string $aName, string $aSummary, $aState){
         $this->setID($aID);
         $this->setName($aName);
         $this->setSummary($aSummary);
@@ -199,10 +199,11 @@ class Activity{
      * @param string $aStart Date de début de l'activité
      */
     public function setStart($aStart){
-        if($this->getEnd() == ''){
+        if($aStart == null) {
+            $this->start = '';
+        } elseif($this->getEnd() == ''){
             $this->start = $aStart;
-        }
-        elseif (($aStart->diff($this->getEnd())->invert) == 0){
+        } elseif (($aStart->diff($this->getEnd())->invert) == 0){
             $this->start = $aStart;
         }
     }
@@ -214,10 +215,11 @@ class Activity{
      * @param string $aEnd Date de fin de l'activité
      */
     public function setEnd($aEnd){
-        if($this->getStart() == ''){
+        if($aEnd == null) {
+            $this->end = '';
+        } elseif($this->getStart() == ''){
             $this->end = $aEnd;
-        }
-        elseif (($aEnd->diff($this->getStart())->invert) == 1 OR $aEnd == $this->getStart()){
+        } elseif (($aEnd->diff($this->getStart())->invert) == 1 OR $aEnd == $this->getStart()){
             $this->end = $aEnd;
         }
     }

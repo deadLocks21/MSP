@@ -1,6 +1,6 @@
 <?php
-require 'DaoError.php';
-require 'ToolsDAO.php';
+require 'database_DaoError.php';
+require 'database_ToolsDAO.php';
 //require '/var/www/public/logic/User.php';
 
 /**
@@ -63,22 +63,3 @@ class UserDao {
         $tDAO->call("CALL AlterUser(?, ?, ?, ?);", array($id, $name, $login, $password));
     }
 }
-
-//$u = new UserDao();
-//$user = $u->Read('cmeunier','746F746F');
-//
-//echo 'id = '.$user->getID().'<br />';
-//echo 'name = '.$user->getName().'<br />';
-//echo 'login = '.$user->getLogin().'<br />';
-//echo 'hash = '.$user->getPasswordHash().'<br />';
-//
-//$user->setName('Meunier');
-//
-//$user = $u->Update($user);
-//
-//$user = $u->Read('cmeunier','746F746F');
-//
-//echo '<br />'.'id = '.$user->getID().'<br />';
-//echo 'name = '.$user->getName().'<br />';
-//echo 'login = '.$user->getLogin().'<br />';
-//echo 'hash = '.$user->getPasswordHash().'<br />';

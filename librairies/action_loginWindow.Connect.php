@@ -1,7 +1,7 @@
 <?php
-require './ihm/ToolsIHM.php';
-require './database/UserDao.php';
-require './logic/Utils.php';
+require 'ihm_ToolsIHM.php';
+require 'database_UserDao.php';
+require 'logic_Utils.php';
 
 $userDAO = new UserDao();
 $utils = new Utils();

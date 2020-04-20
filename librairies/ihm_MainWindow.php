@@ -1,6 +1,6 @@
 <?php
-require 'ToolsIHM.php';
-require './database/ProjectDAO.php';
+require 'ihm_ToolsIHM.php';
+require 'database_ProjectDAO.php';
 
 /**Classe permettant d'afficher la page de récap des projets ou rien en fonction de si un user est connected..*/
 class MainWindow{
@@ -52,7 +52,7 @@ class MainWindow{
      */
     private function getButtons(bool $u){
         if($u){
-            $button = '<p><a href="/action/LoginWindow.Disconnect.php">Déconnexion</a></p>
+            $button = '<p><a href="librairies/action_LoginWindow.Disconnect.php">Déconnexion</a></p>
         <p><a>Profil</a></p>';
         } else {
             $button = '<p><a href="login.php">Connexion</a></p>
@@ -78,12 +78,11 @@ class MainWindow{
 
             $projects = $pDAO->ReadProjects($user);
 
-
             foreach ($projects as $p){
                 $id = $p->getID();
                 $name = $p->getName();
 
-                $crp .= "            <li><a href=\"action/MainWindow.ChooseProject.php?pID=$id\">Projet $name</a</li>\n";
+                $crp .= "            <li><a href=\"librairies/action_MainWindow.ChooseProject.php?pID=$id\">Projet $name</a</li>\n";
             }
 
             $crp .= '        </ul>';

@@ -1,8 +1,8 @@
 <?php
-require './ihm/ToolsIHM.php';
-require './logic/Activity.php';
-require './database/ActivityDAO.php';
-require './ihm/ActivityWindow.php';
+require 'librairies/ihm_ToolsIHM.php';
+require 'librairies/logic_Activity.php';
+require 'librairies/database_ActivityDAO.php';
+require 'librairies/ihm_ActivityWindow.php';
 
 $tIHM = new ToolsIHM();
 

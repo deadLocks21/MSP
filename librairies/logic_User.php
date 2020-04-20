@@ -89,8 +89,8 @@ class User{
      *
      * @param string $aName Nom de l'user.
      */
-    public function setName(string $aName){
-        $this->Name = $aName;
+    public function setName($aName){
+        $this->Name = $aName == null ? '' : $aName;
     }
 
     /**
@@ -99,8 +99,8 @@ class User{
      *
      * @param string $aLogin Login de l'user.
      */
-    public function setLogin(string $aLogin){
-        $this->Login = $aLogin;
+    public function setLogin($aLogin){
+        $this->Login = $aLogin == null ? '' : $aLogin;
     }
 
     /**
@@ -109,7 +109,7 @@ class User{
      *
      * @param string $aPasswordHash Hash du mdp de l'utilisateur.
      */
-    public function setPasswordHash(string $aPasswordHash){
-        $this->PasswordHash = $aPasswordHash;
+    public function setPasswordHash($aPasswordHash){
+        $this->PasswordHash = $aPasswordHash == null ? '' : $aPasswordHash;
     }
 }

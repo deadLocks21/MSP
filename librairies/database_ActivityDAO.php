@@ -1,8 +1,8 @@
 <?php
-require './logic/Project.php';
+require 'logic_Project.php';
 // require '/var/www/public/logic/Activity.php';
 // require '/var/www/public/logic/User.php';
-require 'ToolsDAO.php';
+require 'database_ToolsDAO.php';
 
 /**Gère les Activité de la DB.*/
 class ActivityDAO{
@@ -12,7 +12,7 @@ class ActivityDAO{
      *
      * @param string $s Equivalent de l'ActivityState mais en francais. Il est stocké ainsi dans la DB.
      *
-     * @return ActivityState|null Retourne null ou l'équivalent dans la classe ActivityState.
+     * @return string|null Retourne null ou l'équivalent dans la classe ActivityState.
      */
     private function getState($s){
         $res = null;
@@ -46,12 +46,12 @@ class ActivityDAO{
 
         $lesAct = array();
         foreach ($activities as $a){
-            $act = new Activity($a['ActivitéID'], $a['nom'], $a['résumé'], $this->getState($a['statut']));
-            $act->setStart($a['dateDébut']);
-            $act->setEnd($a['dateFin']);
-            $act->setDuration($a['duréePrévue']);
+            $act = new Activity($a[0], 'Name à compléter', $a[4], $this->getState($a['statut']));
+            $act->setStart($a[8]);
+            $act->setEnd($a[9]);
+            $act->setDuration($a[3]);
             $act->setKind($a['IDType']);
-            $act->setDetails($a['détail']);
+            $act->setDetails($a[5]);
 
             $lesAct[] = $act;
         }
@@ -89,17 +89,3 @@ class ActivityDAO{
         $tDAO->call("CALL AlterActivity(?, ?);", array($id, $statut));
     }
 }
-
-//$p = new Project(3);
-//$u = new User(3);
-//
-//$aDao = new ActivityDAO();
-//
-//echo print_r($aDao->ReadActivities($p, $u));
-//
-//$a = ($aDao->ReadActivities($p, $u))[0];
-//// $a->setState(ActivityState::FINISHED);
-//
-//$aDao->Update($a);
-//
-//echo print_r($aDao->ReadActivities($p, $u));

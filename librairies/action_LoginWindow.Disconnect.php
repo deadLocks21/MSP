@@ -1,5 +1,5 @@
 <?php
-require './ihm/ToolsIHM.php';
+require 'ihm_ToolsIHM.php';
 
 $tIHM = new ToolsIHM();
 

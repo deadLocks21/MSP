@@ -1,5 +1,4 @@
 <?php
-
 /**Contient les outils de base de la gestion de la base de données.*/
 class ToolsDAO{
     /**

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './logic/User.php';
+require 'logic_User.php';
 
 // Variable vaut null si aucun utilisateur est connecté.
 if(!isset($_SESSION['UserConnected'])){
@@ -164,4 +164,3 @@ class ToolsIHM{
         return $return;
     }
 }
-//setIdActSel

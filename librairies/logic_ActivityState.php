@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Enumération permettant de stocker les états d'une activité.
  */
