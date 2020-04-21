@@ -5,7 +5,7 @@ require 'database_ProjectDAO.php';
 /**Classe permettant d'afficher la page de récap des projets ou rien en fonction de si un user est connected..*/
 class MainWindow{
     public function __construct(){
-        echo $this->callPage();
+        echo str_replace("\xE9", "é", $this->callPage());
     }
 
 

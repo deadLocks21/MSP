@@ -10,7 +10,7 @@ body{
 #projetCadre{
 	margin : 0 auto;
 	width: 70%;
-  	height: 450px;
+  	height: auto;
 	border: 2px solid #f1f1f1;
     border-radius: 35px;
     background: #fcf7f7;
@@ -32,3 +32,27 @@ body{
     margin: 20px;
 }
 
+#projet{
+	text-transform: uppercase;
+	font-family: Century Gothic;
+	color: #808080;
+	font-size: 25px;
+	text-indent: 20px;
+}
+
+#info{
+	margin-right: 10px;
+	background-color: #787878;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 3%;
+	padding: 4px 4px;
+	float: right;
+}
+
+#info:hover {
+	background-color: darkgrey;
+	color: #000000;
+	border: 1px solid #000000;
+}
