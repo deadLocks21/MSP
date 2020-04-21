@@ -15,52 +15,39 @@ class MainWindow{
         $user = $tIHM->getUC();
         $co = isset($user);
 
-
-        $button = $this->getButtons($co);
-        $corps = $this->getCorps($co, $user);
-        $userName = $this->getUN($co, $user);
+        if($co){
+            $corps = $this->getCorps($user);
 
 
-        return "<!doctype html>
-<html lang=\"fr\">
-    <head>
-        <meta charset=\"utf-8\">
-        <title>Main</title>
-        <link rel=\"stylesheet\" href=\"style_sombre.css\">
-    </head>
-    <body>
-        $button
-        
-        <br />
+            return '<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Page principale</title>
+		<link rel="stylesheet" href="styles/light/styleMainWindow.css" type="text/css"/>
+	</head>
 
-        <p>$userName</p>
-
-        $corps
-        
-    </body>
-</html>";
-    }
-
-
-    /**
-     * Permet de récupérer les boutons à afficher.
-     *
-     *
-     * @param bool $u TRUE si un user est connécté, FALSE sinon
-     *
-     * @return string Choissis ce qui doit etre affiché en fonction de $u
-     */
-    private function getButtons(bool $u){
-        if($u){
-            $button = '<p><a href="librairies/action_LoginWindow.Disconnect.php">Déconnexion</a></p>
-        <p><a>Profil</a></p>';
+<body>
+	<div id=marge></div>
+	<span id =tech>TECHINICIEN CONNECTÉ : '.$user->getName().'</span>
+	<input type="submit" id=\'profil\' value=\'Profil\'>
+	<input type="submit" id=\'déconnexion\' value=\'Déconnexion\' onclick="document.location.href=\'librairies/action_LoginWindow.Disconnect.php\'">
+	<div id=marge></div>
+	<div id=projetCadre>
+		<div id=titre>Projets attribués</div>
+'.$corps.'
+		<div id=projet><br></div>
+	</div>
+</body>	
+</html>';
         } else {
-            $button = '<p><a href="login.php">Connexion</a></p>
-        <p><a>Profil</a></p>';
+            header('Location: http://'.$_SERVER['HTTP_HOST'].'/login.php');
         }
 
-        return $button;
+
+
     }
+
 
     /**
      * Permet de récupérer le corps de page à afficher.
@@ -71,43 +58,19 @@ class MainWindow{
      *
      * @return string Choissis ce qui doit etre affiché en fonction de $u
      */
-    private function getCorps(bool $u, $user){
-        if($u){
-            $pDAO = new ProjectDAO();
-            $crp = "<ul>\n";
+    private function getCorps($user){
+        $pDAO = new ProjectDAO();
+        $crp = '';
 
-            $projects = $pDAO->ReadProjects($user);
+        $projects = $pDAO->ReadProjects($user);
 
-            foreach ($projects as $p){
-                $id = $p->getID();
-                $name = $p->getName();
+        foreach ($projects as $p) {
+            $id = $p->getID();
+            $name = $p->getName();
 
-                $crp .= "            <li><a href=\"librairies/action_MainWindow.ChooseProject.php?pID=$id\">Projet $name</a</li>\n";
-            }
-
-            $crp .= '        </ul>';
-        } else {
-            $crp = '';
+            $crp .= "            <div id=projet>Projet $name<input type='button' id='info' value='+' onclick=\"document.location.href='librairies/action_MainWindow.ChooseProject.php?pID=$id'\"></div>\n";;
         }
 
         return $crp;
-    }
-
-    /**
-     * Permet de récupérer le nom du technicien et un message de bienvenue à afficher.
-     *
-     *
-     * @param bool $u TRUE si un user est connecté, FALSE sinon
-     *
-     * @return string Choissis ce qui doit etre affiché en fonction de $u
-     */
-    private function getUN(bool $u, $user){
-        if($u){
-            $return = 'Bienvenu technicien ' . strtoupper($user->getName());
-        } else {
-            $return = '';
-        }
-
-        return $return;
     }
 }
