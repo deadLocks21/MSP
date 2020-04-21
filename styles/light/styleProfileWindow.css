@@ -11,12 +11,11 @@ body{
 
 form {
     width:100%;
-    padding: 30px;
     border: 2px solid #f1f1f1;
     border-radius: 50px;
     background: #fcf7f7;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    padding-bottom: 90px;
+    padding: 30px 30px 90px;
 }
 
 h1{
@@ -41,7 +40,7 @@ input[type=submit] {
     float: right;
 }
 
-input[type=submitt] {
+input[type=reset] {
     background-color: #787878;
     color: white;
     padding: 14px 1px;
@@ -58,7 +57,7 @@ input[type=submit]:hover {
     border: 1px solid #000000;
 }
 
-input[type=submitt]:hover {
+input[type=reset]:hover {
     background-color: darkgrey;
     color: #000000;
     border: 1px solid #000000;

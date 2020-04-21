@@ -267,18 +267,22 @@ class Activity{
 
     // METHODES DE LA CLASS
     public function StartActivity(){
-
+        if($this->state == ActivityState::PLANNED) $this->state = ActivityState::ONGOING;
+        elseif($this->state != ActivityState::ONGOING) throw new BadActivityStateError($this, ActivityState::ONGOING);
     }
 
     public function Finish(){
-
+        if($this->state == ActivityState::ONGOING) $this->state = ActivityState::FINISHED;
+        elseif($this->state != ActivityState::FINISHED) throw new BadActivityStateError($this, ActivityState::FINISHED);
     }
 
     public function Cancel(){
-
+        if($this->state != ActivityState::FINISHED) $this->state = ActivityState::CANCELED;
+        elseif($this->state == ActivityState::FINISHED) throw new BadActivityStateError($this, ActivityState::CANCELED);
     }
 
     public function UnCancel(){
-
+        if($this->state == ActivityState::CANCELED) $this->state = ActivityState::PLANNED;
+        elseif($this->state != ActivityState::PLANNED) throw new BadActivityStateError($this, ActivityState::PLANNED);
     }
 }

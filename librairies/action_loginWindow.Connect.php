@@ -17,15 +17,15 @@ try {
 
     $tIHM->setUC($u);
 
-    header('Location: http://'.$_SERVER['HTTP_HOST'].'');
+    header('Location: https://'.$_SERVER['HTTP_HOST'].'');
 } catch (BadUserError $e) {
     $tIHM->setLoginFail(1);
     $tIHM->setUC(null);
 
-    header('Location: http://'.$_SERVER['HTTP_HOST'].'/login.php');
+    header('Location: https://'.$_SERVER['HTTP_HOST'].'/login.php');
 } catch (BadPasswordError $e) {
     $tIHM->setLoginFail(2);
     $tIHM->setUC(null);
 
-    header('Location: http://'.$_SERVER['HTTP_HOST'].'/login.php?login='.$login);
+    header('Location: https://'.$_SERVER['HTTP_HOST'].'/login.php?login='.$login);
 }

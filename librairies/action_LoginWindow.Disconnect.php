@@ -7,4 +7,4 @@ $tIHM->setUC(null);
 $tIHM->setLoginFail(null);
 $tIHM->setIdProjSel(null);
 
-header('Location: http://'.$_SERVER['HTTP_HOST'].'');
+header('Location: https://'.$_SERVER['HTTP_HOST'].'');

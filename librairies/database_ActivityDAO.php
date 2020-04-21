@@ -46,7 +46,7 @@ class ActivityDAO{
 
         $lesAct = array();
         foreach ($activities as $a){
-            $act = new Activity($a[0], 'Name à compléter', $a[4], $this->getState($a['statut']));
+            $act = new Activity($a[0], $a['nom'], $a[4], $this->getState($a['statut']));
             $act->setStart($a[8]);
             $act->setEnd($a[9]);
             $act->setDuration($a[3]);

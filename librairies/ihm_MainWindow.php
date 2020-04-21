@@ -30,7 +30,7 @@ class MainWindow{
 <body>
 	<div id=marge></div>
 	<span id =tech>TECHINICIEN CONNECTÉ : '.$user->getName().'</span>
-	<input type="submit" id=\'profil\' value=\'Profil\'>
+	<input type="submit" id=\'profil\' value=\'Profil\' onclick="document.location.href=\'https://'.$_SERVER['HTTP_HOST'].'/profile.php\'">
 	<input type="submit" id=\'déconnexion\' value=\'Déconnexion\' onclick="document.location.href=\'librairies/action_LoginWindow.Disconnect.php\'">
 	<div id=marge></div>
 	<div id=projetCadre>
@@ -41,7 +41,7 @@ class MainWindow{
 </body>	
 </html>';
         } else {
-            header('Location: http://'.$_SERVER['HTTP_HOST'].'/login.php');
+            header('Location: https://'.$_SERVER['HTTP_HOST'].'/login.php');
         }
 
 

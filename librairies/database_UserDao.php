@@ -33,7 +33,7 @@ class UserDao {
                 $info = $tDAO->query("CALL GetUser(?, ?);", array($login, $password));
                 $user = new User($info[0]['ID']);
 
-                $user->setName($info[0]['nom']);
+                $user->setName(ucfirst($info[0]['prenom']).' '.strtoupper($info[0]['nom']));
                 $user->setLogin($login);
                 $user->setPasswordHash($password);
             } else {

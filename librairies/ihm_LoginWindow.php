@@ -46,7 +46,5 @@ class LoginWindow{
 	</div>
 </body>	
 </html>';
-
-        echo $page;
     }
 }

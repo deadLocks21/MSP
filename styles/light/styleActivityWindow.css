@@ -80,3 +80,11 @@ input[type=date] {
     cursor: pointer;
     margin-top: 10%; 
 }
+
+.error {
+	color: red;
+	text-align: center;
+	margin: 0px;
+	text-transform: uppercase;
+	font-family: Century Gothic;
+}

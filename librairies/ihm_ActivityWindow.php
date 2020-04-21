@@ -85,11 +85,13 @@ class ActivityWindow{
             $return .= '            <p id="terminé"><input type="radio" name="statut" value="FINISHED">Terminée</p>'."\n";
         }
 
-        if($s == ActivityState::ONGOING){
+        if($s == ActivityState::CANCELED){
             $return .= '            <p id="annulé"><input type="radio" name="statut" value="CANCELED" checked>Annulée</p>'."\n";
         } else {
             $return .= '            <p id="annulé"><input type="radio" name="statut" value="CANCELED">Annulée</p>'."\n";
         }
+
+        if($_GET['error'] == 'true') $return .= "<p class='error'>Impossible d'accéder à cette état ...</p>";
 
 
         return $return;

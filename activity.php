@@ -28,5 +28,5 @@ if(isset($projID) AND $projID != 0 AND isset($user) AND isset($actID) AND $actID
 
     new ActivityWindow($activity);
 } else {
-    header('Location: http://'.$_SERVER['HTTP_HOST'].'/');
+    header('Location: https://'.$_SERVER['HTTP_HOST'].'/');
 }
