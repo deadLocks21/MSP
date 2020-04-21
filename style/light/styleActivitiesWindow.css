@@ -1,0 +1,34 @@
+body{
+	background: #F5F5F5;
+}
+
+
+#marge{
+	margin-top: 90px;
+}
+
+#projetCadre{
+	margin : 0 auto;
+	width: 70%;
+  	height: 450px;
+	border: 2px solid #f1f1f1;
+    border-radius: 35px;
+    background: #fcf7f7;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#titre{
+	text-transform: uppercase;
+    font-family: Century Gothic;
+   	color: #808080;
+   	text-align: center;
+   	font-size: 35px;
+   	font-weight: bold;
+}
+
+
+#myList{
+    width: 846px;
+    margin: 20px;
+}
+
