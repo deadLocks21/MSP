@@ -27,5 +27,5 @@ try {
     $tIHM->setLoginFail(2);
     $tIHM->setUC(null);
 
-    header('Location: http://'.$_SERVER['HTTP_HOST'].'/login.php');
+    header('Location: http://'.$_SERVER['HTTP_HOST'].'/login.php?login='.$login);
 }

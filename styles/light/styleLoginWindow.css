@@ -60,3 +60,11 @@ b {
    	text-align: center;
    	font-size: 20px;
 }
+
+.error {
+    color: red;
+    text-align: center;
+    margin: 0px;
+    text-transform: uppercase;
+    font-family: Century Gothic;
+}
