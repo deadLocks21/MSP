@@ -24,6 +24,12 @@ class ActivityWindow{
 	</head>
 
 <body>
+    <div id=\"bandeau\">
+		<a class=\"boutonpageprincipale\" href=\"index.php\">1.PAGE PRINCIPALE</a> 
+		<a class=\"boutonactivités\" href=\"activities.php?name=".$_GET['pName']."\">2. ".$_GET['pName']."</a> 
+		<a class=\"boutonactivity\" href=\"\">3. OPTIONS ACTIVITÉS</a> 
+	</div>
+
 	<div id=marge></div>
 	<div id =id1>TYPE D'ACTIVITÉ : $kind</div>
 	<div id=marge></div>
