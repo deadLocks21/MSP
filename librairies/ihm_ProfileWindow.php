@@ -29,8 +29,8 @@ class ProfileWindow{
 			</br>
 			<label><b>Mot de passe</b></label>
 			<input type="password" id="text" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Doit contenir au moins un nombre et une majuscule et des minuscules, ainsi que 8 caractères minimum." placeholder="Saisir votre nouveau mot de passe" required>
-			<input type="submit" id=\'submit\' value=\'Modifier\'>
-			<input type="reset" id=\'submit\' value=\'Annuler\' onclick="document.location.href=\'https://'.$_SERVER['HTTP_HOST'].'\'">
+			<input type="submit" id=\'submitt\' value=\'Modifier\'>
+			<input type="reset" id=\'submitt\' value=\'Annuler\' onclick="document.location.href=\'https://'.$_SERVER['HTTP_HOST'].'\'">
 		</form>	
 	</div>
 </body>	
