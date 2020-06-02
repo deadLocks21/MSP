@@ -72,7 +72,7 @@ class MainWindow{
             $id = $p->getID();
             $name = $p->getName();
 
-            $crp .= "            <div id=projet>Projet $name<input type='button' id='info' value='+' onclick=\"document.location.href='librairies/action_MainWindow.ChooseProject.php?pID=$id'\"></div>\n";;
+            $crp .= "            <div id=projet>Projet $name<input type='button' id='info' value='+' onclick=\"document.location.href='librairies/action_MainWindow.ChooseProject.php?pID=$id&name=$name'\"></div>\n";;
         }
 
         return $crp;

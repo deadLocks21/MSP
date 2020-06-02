@@ -26,6 +26,15 @@ class ActivitiesWindow {
 $codeActs
 		<div id=projet><br></div>
 	</div>
+	
+	<div id=\"bandeau\">
+		<a class=\"boutonpageprincipale\" href=\"index.php\">1. MENU PRINCIPALE</a> 
+		<a class=\"boutonactivités\" href=\"\">2. ".$_GET['name']."</a> 
+	</div>
+	
+	<footer>
+        <a id=\"changeColor\">Passer en mode /*Remplir*/</a>
+    </footer>
 </body>	
 </html>";
     }
@@ -36,9 +45,24 @@ $codeActs
         foreach ($acts as $a){
             $actID = $a->getID();
             $actName = $a->getSummary();
-            $actState = $a->getState();
+            $actStateEn = $a->getState();
 
-            $lis .= "        <div id=projet><a>$actName ($actState)</a><input type='button' id='info' value='+' onclick=\"document . location . href = 'librairies/action_ActivitiesWindow.ChooseActivity.php?id=$actID'\"></div>\n";
+            switch ($actStateEn){
+                case "CANCELED":
+                    $actState = "Annulée";
+                    break;
+                case "PLANNED":
+                    $actState = "Prévue";
+                    break;
+                case "ONGOING":
+                    $actState = "En cours";
+                    break;
+                case "FINISHED":
+                    $actState = "Terminée";
+                    break;
+            }
+
+            $lis .= "        <div id=projet><a>$actID. $actName ($actState)</a><input type='button' id='info' value='+' onclick=\"document . location . href = 'librairies/action_ActivitiesWindow.ChooseActivity.php?id=$actID&pName=".$_GET['name']."'\"></div>\n";
         }
 
         return $lis;
