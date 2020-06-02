@@ -2,15 +2,9 @@ body{
 	background: #F5F5F5;
 }
 
-#container{
-	width:500px;
-	margin-left : auto;
-	margin-right: auto;
-	margin-top: 10%;
-}
-
 form {
-    width:100%;
+    width: 500px;
+    margin: 10% auto 20px;
     padding: 30px;
     border: 2px solid #f1f1f1;
     border-radius: 50px;
@@ -61,10 +55,53 @@ b {
    	font-size: 20px;
 }
 
-.error {
-    color: red;
-    text-align: center;
-    margin: 0px;
-    text-transform: uppercase;
+#cacher {
     font-family: Century Gothic;
+    text-decoration: underline;
+}
+
+#afficher {
+    font-family: Century Gothic;
+    text-decoration: underline;
+}
+  
+#checkbox {
+    margin-left: 1px;
+    margin-top: 10px;
+}
+
+.eyeformdp {
+    background-image: url("images/eyemdp.png");
+}
+
+h4{
+    text-align:center;
+  }
+
+.container form{
+width:250px;
+margin:20px auto;
+}
+
+i{
+cursor:pointer;
+}
+
+footer{
+    text-align: center;
+    display: block;
+}
+
+#changeColor{
+    background-color: #787878;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#changeColor:hover {
+    background-color: darkgrey;
+    color: #000000;
+    border: 1px solid #000000;
 }
