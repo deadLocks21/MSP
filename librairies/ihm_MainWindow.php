@@ -38,6 +38,10 @@ class MainWindow{
 '.$corps.'
 		<div id=projet><br></div>
 	</div>
+	
+	<footer>
+        <a id="changeColor">Passer en mode /*Remplir*/</a>
+    </footer>
 </body>	
 </html>';
         } else {
