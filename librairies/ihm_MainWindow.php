@@ -14,6 +14,8 @@ class MainWindow{
         $tIHM = new ToolsIHM();
         $user = $tIHM->getUC();
         $co = isset($user);
+        $theme = ToolsIHM::getLightTheme() ? "light" : "dark";
+        $themeFr = ToolsIHM::getLightTheme() ? "sombre" : "clair";
 
         if($co){
             $corps = $this->getCorps($user);
@@ -24,7 +26,7 @@ class MainWindow{
 	<head>
 		<meta charset="utf-8" />
 		<title>Page principale</title>
-		<link rel="stylesheet" href="styles/light/styleMainWindow.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/'.$theme.'/styleMainWindow.css" type="text/css"/>
 	</head>
 
 <body>
@@ -40,7 +42,7 @@ class MainWindow{
 	</div>
 	
 	<footer>
-        <a id="changeColor">Passer en mode /*Remplir*/</a>
+        <a id="changeColor" href="librairies/action_changeTheme.php">Passer en mode '.$themeFr.'</a>
     </footer>
 </body>	
 </html>';

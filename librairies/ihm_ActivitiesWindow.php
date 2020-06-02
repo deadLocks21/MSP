@@ -8,6 +8,9 @@ class ActivitiesWindow {
 
     private function callPage($acts){
         $codeActs = $this->setActs($acts);
+        $theme = ToolsIHM::getLightTheme() ? "light" : "dark";
+        $themeFr = ToolsIHM::getLightTheme() ? "sombre" : "clair";
+
 
 
         return "<!DOCTYPE html>
@@ -15,7 +18,7 @@ class ActivitiesWindow {
 	<head>
 		<meta charset='UTF-8' />
 		<title>Détail projet</title>
-		<link rel=\"stylesheet\" href=\"styles/light/styleActivitiesWindow.css\" type=\"text/css\"/>
+		<link rel=\"stylesheet\" href=\"styles/$theme/styleActivitiesWindow.css\" type=\"text/css\"/>
 	</head>
 
 <body>
@@ -33,7 +36,7 @@ $codeActs
 	</div>
 	
 	<footer>
-        <a id=\"changeColor\">Passer en mode /*Remplir*/</a>
+        <a id=\"changeColor\" href=\"librairies/action_changeTheme.php\">Passer en mode $themeFr</a>
     </footer>
 </body>	
 </html>";

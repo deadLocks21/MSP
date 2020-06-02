@@ -33,9 +33,9 @@ if(isset($projID) AND $projID != 0 AND isset($user) AND isset($actID) AND $actID
 
         $aDAO->Update($activity);
 
-        header('Location: https://'.$_SERVER['HTTP_HOST'].'/activities.php');
+        header('Location: https://'.$_SERVER['HTTP_HOST'].'/activities.php?name='.$_POST['pName']);
     } catch (BadActivityStateError $e) {
-        header('Location: https://'.$_SERVER['HTTP_HOST'].'/activity.php?error=true');
+        header('Location: https://'.$_SERVER['HTTP_HOST'].'/activity.php?error=true&name='.$_POST['pName']);
     }
     echo print_r($activity);
     echo print_r($_POST);

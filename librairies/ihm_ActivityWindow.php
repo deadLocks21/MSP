@@ -13,6 +13,7 @@ class ActivityWindow{
         $fin = $this->getFin($a->getEnd());
         $statut = $this->getStatut($a->getState());
         $date = $this->getDate($debut, $fin);
+        $theme = ToolsIHM::getLightTheme() ? "light" : "dark";
 
 
         return "<!DOCTYPE html>
@@ -20,7 +21,7 @@ class ActivityWindow{
 	<head>
 		<meta charset=\"utf-8\" />
 		<title>Page principale</title>
-		<link rel=\"stylesheet\" href=\"styles/light/styleActivityWindow.css\" type=\"text/css\"/>
+		<link rel=\"stylesheet\" href=\"styles/$theme/styleActivityWindow.css\" type=\"text/css\"/>
 	</head>
 
 <body>
@@ -38,6 +39,7 @@ class ActivityWindow{
 	<span id=id2>$details</span>
 	<form id=id3 action=\"librairies/action_ActivityWindow.Update.php\" method=\"POST\">
 	    $statut
+	    <input type='hidden' name='pName' value='".$_GET["pName"]."'>
     
 	<span >
 			
@@ -45,6 +47,8 @@ class ActivityWindow{
 	
 	$date
 	<input type=\"submit\" id='modifier' value='Fermer'>
+	<br />
+	
 	</form>
 </body>	
 </html>";

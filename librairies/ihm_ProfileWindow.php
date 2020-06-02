@@ -6,12 +6,14 @@ class ProfileWindow{
     }
 
     private function callPage($u){
+        $theme = ToolsIHM::getLightTheme() ? "light" : "dark";
+        $themeFr = ToolsIHM::getLightTheme() ? "sombre" : "clair";
 
         return '<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="styles/light/styleProfileWindow.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/'.$theme.'/styleProfileWindow.css" type="text/css"/>
 		<title>Page de profil</title>
 	</head>
 
@@ -33,6 +35,10 @@ class ProfileWindow{
 			<input type="reset" id=\'submitt\' value=\'Annuler\' onclick="document.location.href=\'https://'.$_SERVER['HTTP_HOST'].'\'">
 		</form>	
 	</div>
+	
+	<footer>
+        <a id="changeColor" href="librairies/action_changeTheme.php">Passer en mode '.$themeFr.'</a>
+    </footer>
 </body>	
 </html>';
     }

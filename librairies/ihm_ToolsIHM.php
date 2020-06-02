@@ -163,4 +163,30 @@ class ToolsIHM{
 
         return $return;
     }
+
+
+    /**
+     * Mutateur de la variable de session lightTheme.
+     *
+     *
+     * @param bool $b Valeur à affecter.
+     */
+    public static function setLightTheme($b){
+        $_SESSION['lightTheme'] = $b;
+    }
+
+    /**
+     * Assesseur de la variable de session lightTheme
+     *
+     *
+     * @return bool Valeur de la variable.
+     */
+    public static function getLightTheme(){
+        if(isset($_SESSION['lightTheme']))
+            $res = $_SESSION['lightTheme'];
+        else
+            $res = "light";
+
+        return $res;
+    }
 }

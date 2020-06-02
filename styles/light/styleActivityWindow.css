@@ -80,6 +80,10 @@ input[type=date] {
     margin-top: 10%; 
 }
 
+.error{
+	color: red;
+}
+
 
 
 #bandeau {
@@ -151,23 +155,4 @@ input[type=date] {
 	color:white;
 	text-decoration: none;
 	
-}
-
-footer{
-	text-align: center;
-	display: block;
-}
-
-#changeColor{
-	background-color: #787878;
-	color: white;
-	border-radius: 10px;
-	cursor: pointer;
-	padding: 10px;
-}
-
-#changeColor:hover {
-	background-color: darkgrey;
-	color: #000000;
-	border: 1px solid #000000;
 }

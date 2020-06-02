@@ -11,12 +11,15 @@ class LoginWindow{
     }
 
     private function callPage($etatLogin){
+        $theme = ToolsIHM::getLightTheme() ? "light" : "dark";
+        $themeFr = ToolsIHM::getLightTheme() ? "sombre" : "clair";
+
         echo '<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="styles/light/styleLoginWindow.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/'.$theme.'/styleLoginWindow.css" type="text/css"/>
 		<title>Page de connexion</title>
 
 	</head>
@@ -76,7 +79,7 @@ class LoginWindow{
 		  </script>
 
 		<footer>
-			<a id="changeColor">Passer en mode /*Remplir*/</a>
+			<a id="changeColor" href="librairies/action_changeTheme.php">Passer en mode '.$themeFr.'</a>
 		</footer>
 		
     </body>	
