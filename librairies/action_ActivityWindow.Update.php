@@ -26,10 +26,20 @@ if(isset($projID) AND $projID != 0 AND isset($user) AND isset($actID) AND $actID
     }
 
     try {
-        if($_POST['statut'] == ActivityState::PLANNED) $activity->UnCancel();
-        elseif($_POST['statut'] == ActivityState::ONGOING) $activity->StartActivity();
-        elseif($_POST['statut'] == ActivityState::FINISHED) $activity->Finish();
-        elseif($_POST['statut'] == ActivityState::CANCELED) $activity->Cancel();
+        switch ($_POST['statut']){
+            case ActivityState::PLANNED :
+                $activity->UnCancel();
+                break;
+            case ActivityState::ONGOING :
+                $activity->StartActivity();
+                break;
+            case ActivityState::FINISHED :
+                $activity->Finish();
+                break;
+            case ActivityState::CANCELED :
+                $activity->Cancel();
+                break;
+        }
 
         $aDAO->Update($activity);
 
@@ -37,8 +47,6 @@ if(isset($projID) AND $projID != 0 AND isset($user) AND isset($actID) AND $actID
     } catch (BadActivityStateError $e) {
         header('Location: https://'.$_SERVER['HTTP_HOST'].'/activity.php?error=true&name='.$_POST['pName']);
     }
-    echo print_r($activity);
-    echo print_r($_POST);
 } else {
     header('Location: https://'.$_SERVER['HTTP_HOST'].'/');
 }

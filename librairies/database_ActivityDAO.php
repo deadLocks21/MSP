@@ -86,6 +86,6 @@ class ActivityDAO{
                 break;
         }
 
-        $tDAO->call("CALL AlterActivity(?, ?);", array($id, $statut));
+        $tDAO->call("CALL AlterActivity(?, ?, ?, ?);", array($id, $statut, $a->getStart(), $a->getEnd()));
     }
 }

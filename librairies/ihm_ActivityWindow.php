@@ -27,7 +27,7 @@ class ActivityWindow{
 <body>
     <div id=\"bandeau\">
 		<a class=\"boutonpageprincipale\" href=\"index.php\">1.PAGE PRINCIPALE</a> 
-		<a class=\"boutonactivités\" href=\"activities.php?name=".$_GET['pName']."\">2. ".$_GET['pName']."</a> 
+		<a class=\"boutonactivités\" href=\"activities.php?name={$_GET["pName"]}\">2. {$_GET["pName"]}</a> 
 		<a class=\"boutonactivity\" href=\"\">3. OPTIONS ACTIVITÉS</a> 
 	</div>
 
@@ -37,41 +37,34 @@ class ActivityWindow{
 	<div id =id1>RESUMÉ : $summary</div>
 	<div id=marge></div>		
 	<span id=id2>$details</span>
-	<form id=id3 action=\"librairies/action_ActivityWindow.Update.php\" method=\"POST\">
-	    $statut
-	    <input type='hidden' name='pName' value='".$_GET["pName"]."'>
-    
-	<span >
-			
-  	</span>  			  			  			
 	
-	$date
-	<input type=\"submit\" id='modifier' value='Fermer'>
+	<form action=\"librairies/action_ActivityWindow.Update.php\" method=\"POST\">
+        <span id=id3>
+            
+                $statut
+                <input type='hidden' name='pName' value='{$_GET["pName"]}'>
+                		
+        </span>  			  			  			
+	
+        <span id=id4>
+            $date
+        </span>
+	
+	    <input type=\"submit\" id='modifier' value='Fermer'>
+	</form>	
 	<br />
-	
-	</form>
 </body>	
 </html>";
     }
 
     private function getDebut($d){
-        $return = "";
-
-        if(isset($d)){
-            $return = "        <p>Départ : $d</p>";
-        }
-
-        return $return;
+        echo "getDebut $d";
+        return $d != '' ? $d : null;
     }
 
     private function getFin($d){
-        $return = "";
-
-        if(isset($d)){
-            $return = "        <p>Fin prévue : $d</p>";
-        }
-
-        return $return;
+        echo "getFin $d";
+        return $d != '' ? $d : null;
     }
 
     private function getStatut($s){
@@ -111,28 +104,19 @@ class ActivityWindow{
         $ret = "";
 
         if(isset($d) || isset($f)){
-            $ret .= "<span id=id4>";
-
             if(isset($d)){
-                $ret .= '			<label for=\"départ\">Début</label>
-			<br>
-  			'.$d.'
-  			';
+                $ret .= "<p>DEBUT : $d</p>";
             }
 
             if(isset($d) && isset($f)){
-               $ret .= '<br>
-  			<br>
-  			';
+               $ret .= "\n            <br />";
             }
 
             if(isset($f)){
-                $ret .= '<label for="départ">Fin</label>
-			<br>
-  			'.$f;
+                $ret .= "\n            <p>FIN : $f</p>";
             }
-
-            $ret .= "</span>";
         }
+
+        return $ret;
     }
 }

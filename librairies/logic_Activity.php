@@ -203,9 +203,13 @@ class Activity{
             $this->start = '';
         } elseif($this->getEnd() == ''){
             $this->start = $aStart;
-        } elseif (($aStart->diff($this->getEnd())->invert) == 0){
+        } elseif ($aStart <= $this->end){
             $this->start = $aStart;
         }
+
+//        echo "setStart : ";
+//        echo "startDate = {$this->start}";
+//        echo "    endDate = {$this->end}\n";
     }
 
     /**
@@ -219,9 +223,13 @@ class Activity{
             $this->end = '';
         } elseif($this->getStart() == ''){
             $this->end = $aEnd;
-        } elseif (($aEnd->diff($this->getStart())->invert) == 1 OR $aEnd == $this->getStart()){
+        } elseif ($aEnd >= $this->start){
             $this->end = $aEnd;
         }
+
+//        echo "setEnd : ";
+//        echo "startDate = {$this->start}";
+//        echo "    endDate = {$this->end}\n";
     }
 
     /**
@@ -265,24 +273,51 @@ class Activity{
     }
 
 
+    /**
+     * Permet de retourner la date du jour.
+     *
+     *
+     * @return string Date du jour.
+     */
+    private function dateDuJour(){
+        return date("Y-m-d");
+    }
+
+
     // METHODES DE LA CLASS
     public function StartActivity(){
-        if($this->state == ActivityState::PLANNED) $this->state = ActivityState::ONGOING;
+        if($this->state == ActivityState::PLANNED) {
+            $this->state = ActivityState::ONGOING;
+            $this->start = $this->dateDuJour();
+            $this->end = null;
+        }
         elseif($this->state != ActivityState::ONGOING) throw new BadActivityStateError($this, ActivityState::ONGOING);
     }
 
     public function Finish(){
-        if($this->state == ActivityState::ONGOING) $this->state = ActivityState::FINISHED;
+        if($this->state == ActivityState::ONGOING) {
+            $this->state = ActivityState::FINISHED;
+            $this->end = $this->dateDuJour();
+        }
         elseif($this->state != ActivityState::FINISHED) throw new BadActivityStateError($this, ActivityState::FINISHED);
     }
 
     public function Cancel(){
-        if($this->state != ActivityState::FINISHED) $this->state = ActivityState::CANCELED;
-        elseif($this->state == ActivityState::FINISHED) throw new BadActivityStateError($this, ActivityState::CANCELED);
+        if($this->state != ActivityState::FINISHED) {
+            $this->state = ActivityState::CANCELED;
+            $this->start = null;
+            $this->end = null;
+        }
+        elseif($this->state == ActivityState::FINISHED)
+            throw new BadActivityStateError($this, ActivityState::CANCELED);
     }
 
     public function UnCancel(){
-        if($this->state == ActivityState::CANCELED) $this->state = ActivityState::PLANNED;
+        if($this->state == ActivityState::CANCELED) {
+            $this->state = ActivityState::PLANNED;
+            $this->start = null;
+            $this->end = null;
+        }
         elseif($this->state != ActivityState::PLANNED) throw new BadActivityStateError($this, ActivityState::PLANNED);
     }
 }
