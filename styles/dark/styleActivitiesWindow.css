@@ -87,7 +87,7 @@ body{
 	
 }
 
-.boutonactivitÃ©s {
+.boutonactivités {
 	text-transform: uppercase;
 	text-align: center;
 	font-family: Century Gothic;
@@ -101,7 +101,7 @@ body{
 	
 }
 
-.boutonactivitÃ©s:visited {
+.boutonactivités:visited {
 	text-transform: uppercase;
 	text-align: center;
 	font-family: Century Gothic;
@@ -114,7 +114,7 @@ body{
 	
 }
 
-.boutonactivitÃ©s:hover {
+.boutonactivités:hover {
 	color:white;
 	text-decoration: none;
 	
