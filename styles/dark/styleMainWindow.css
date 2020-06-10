@@ -1,0 +1,169 @@
+body{
+	background: #434343;
+}
+
+#profil {
+    background-color: #656565;
+    color: whitesmoke;
+    padding: 14px 20px;
+    margin: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10%;
+    padding: 8px 8px;
+    margin-left: 10px;
+}
+
+#déconnexion {
+    background-color: #656565;
+    color: whitesmoke;
+    padding: 14px 20px;
+    margin: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10%;
+    padding: 8px 8px;
+    margin-right:120px;
+    float: right;
+}
+
+#profil:hover {
+    background-color: darkgrey;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+#déconnexion:hover {
+    background-color: darkgrey;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+#tech{
+	font-family: Century Gothic;
+	border: 2px solid #707070;
+    border-radius: 10px;
+	font-size: 17px;
+	margin-left: 80px;
+	margin-right: 80px;
+	padding: 5px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color:whitesmoke;
+}
+
+#marge{
+	margin-top: 30px;
+}
+
+#projetCadre{
+	margin: 0 auto 20px;
+	width: 70%;
+  	height: auto;
+	border: 2px solid #707070;
+    border-radius: 35px;
+    background: #606060;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#titre{
+	text-transform: uppercase;
+    font-family: Century Gothic;
+   	color: #c8c8c8;
+   	text-align: center;
+   	font-size: 35px;
+   	font-weight: bold;
+}
+
+#projet{
+	text-transform: uppercase;
+    font-family: Century Gothic;
+   	color: #c8c8c8;
+   	font-size: 25px;
+	text-indent: 20px;
+}
+
+#info{
+	margin-right: 10px;
+   	background-color: #e0e0e0;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 3%;
+    padding: 4px 4px;
+    float: right;
+}
+
+#info:hover {
+    background-color: darkgrey;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+footer{
+	text-align: center;
+	display: block;
+}
+
+#changeColor{
+	background-color: #e0e0e0;
+	color: black;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
+}
+
+#changeColor:hover {
+	background-color: darkgrey;
+	color: #000000;
+	border: 1px solid #000000;
+}
+
+#bandeau {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left:0;
+	right:0;
+	background: grey;
+	width: 100%;
+    height: 55px;
+    box-shadow: 0px 3px 0px #aaa;
+}
+
+
+
+
+.boutonmain {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Century Gothic;
+	font-size: 24px;
+	text-decoration:none;
+	padding-left: 50px;
+	line-height: 50px;
+	color:whitesmoke;
+    text-decoration: underline;
+    margin-left: 41%;
+    
+	
+}
+
+.boutonmain:visited {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Century Gothic;
+	font-size: 24px;
+	text-decoration:none;
+	padding-left: 50px;
+	line-height: 50px;
+	color:whitesmoke;
+	text-decoration: underline;
+	
+}
+
+.boutonmain:hover {
+	color:white;
+	text-decoration: none;
+	
+}

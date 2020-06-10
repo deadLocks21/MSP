@@ -1,0 +1,140 @@
+body{
+	background: #434343;
+}
+
+
+#marge{
+	margin-top: 90px;
+}
+
+#projetCadre{
+	margin: 0 auto 20px;
+	width: 70%;
+	height: auto;
+	border: 2px solid #636363;
+    border-radius: 35px;
+    background: #787878;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#titre{
+	text-transform: uppercase;
+    font-family: Century Gothic;
+   	color: #C8C8C8;
+   	text-align: center;
+   	font-size: 35px;
+   	font-weight: bold;
+}
+
+
+#myList{
+    width: 846px;
+    margin: 20px;
+}
+
+#projet{
+	text-transform: uppercase;
+	font-family: Century Gothic;
+	color: #C8C8C8;
+	font-size: 25px;
+	text-indent: 20px;
+}
+
+#info{
+	margin-right: 10px;
+	background-color: #CACACA;
+	color: black;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 3%;
+	padding: 4px 4px;
+	float: right;
+}
+
+#info:hover {
+	background-color: darkgrey;
+	color: #000000;
+	border: 1px solid #000000;
+}
+
+#bandeau {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left:0;
+	right:0;
+	background: grey;
+	width: 100%;
+	height: 55px;
+	box-shadow: 0px 3px 0px #aAa;
+}
+
+
+
+
+
+.boutonpageprincipale {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Century Gothic;
+	font-size: 24px;
+	text-decoration:none;
+	padding-left: 50px;
+	margin-left: 36%;
+	line-height: 50px;
+	color: white;
+	
+}
+
+.boutonactivitÃ©s {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Century Gothic;
+	font-size: 24px;
+	text-decoration:none;
+	padding-left: 50px;
+	line-height: 50px;
+	
+	color:black;
+	text-decoration: underline;
+	
+}
+
+.boutonactivitÃ©s:visited {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Century Gothic;
+	font-size: 24px;
+	text-decoration:none;
+	padding-left: 50px;
+	line-height: 50px;
+	color:black;
+	text-decoration: underline;
+	
+}
+
+.boutonactivitÃ©s:hover {
+	color:white;
+	text-decoration: none;
+	
+}
+
+footer{
+	text-align: center;
+	display: block;
+}
+
+#changeColor{
+	background-color: #f0f0f0;
+	color: black;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
+}
+
+#changeColor:hover {
+	background-color: darkgrey;
+	color: #000000;
+	border: 1px solid #000000;
+}
